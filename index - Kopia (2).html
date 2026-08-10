@@ -11,13 +11,13 @@
         }
 
         body {
-            font-size: 20px; /* Lekko zmniejszone dla lepszej czytelności */
-            line-height: 1.4;
+            font-size: 22px;
+            line-height: 1.35;
             color: #111;
             background: #fff;
             max-width: 650px;
             margin: 0 auto;
-            padding: 1.5rem; /* Mniejszy padding na urządzenia mobilne */
+            padding: 2rem;
         }
 
         p {
@@ -32,17 +32,17 @@
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
         }
 
-        h2 {
-            font-size: 28px; /* Zmniejszone, by długie tytuły mieściły się na telefonie */
-            color: #333;
-            line-height: 1.2;
-        }
+		h2 {
+			font-size: 32px; /* Zmiana z 1.5rem na 32px */
+			color: #333;
+		}
+
 
         h4 {
-            font-size: 1.8rem;
+            font-size: 2.5em;
             line-height: 1.2;
         }
 
@@ -64,39 +64,6 @@
             border-bottom-color: #005177;
         }
 
-        /* RESPNSYWDNY NAGŁÓWEK */
-        .site-header {
-            display: flex; 
-            flex-direction: column; /* Domyślnie na telefonach: jedno pod drugim */
-            align-items: center; 
-            text-align: center;
-            gap: 1rem;
-        }
-
-        .site-header img {
-            max-width: 100px; /* Ograniczenie wielkości logo/zdjęcia na telefonie */
-            height: auto;
-        }
-
-        /* REGUŁY DLA WIĘKSZYCH EKRANÓW (KOMPUTER / TABLET) */
-        @media (min-width: 480px) {
-            body {
-                font-size: 22px; /* Powrót do Twoich 22px na komputerze */
-                padding: 2rem;
-            }
-            h1 {
-                font-size: 2.5rem;
-            }
-            h2 {
-                font-size: 32px;
-            }
-            .site-header {
-                flex-direction: row; /* Na komputerze: obok siebie */
-                justify-content: space-between;
-                text-align: left;
-            }
-        }
-
         .site-footer {
             text-align: center;
             padding-top: 2rem;
@@ -109,10 +76,10 @@
 </head>
 <body>
 
-<!-- Usunięto style inline z nagłówka, przeniesione do sekcji <style> -->
-<header class="site-header">
-    <h1 class="site-title">Paweł Klimczewski</h1>
-    <img src="paweł_klimczewski.png" alt="Paweł Klimczewski">		
+<header class="site-header" style="display: flex; align-items: center; justify-content: space-between;">
+    <h1 class="site-title" style="margin: 0;">Paweł Klimczewski</h1>
+    <img src="paweł_klimczewski.png" alt="Paweł Klimczewski" style="display: block;">		
+    <!--<p class="site-description">Tego w mediach nie znajdziecie</p>-->
 </header>
 <br>
 
