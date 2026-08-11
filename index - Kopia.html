@@ -11,13 +11,13 @@
         }
 
         body {
-            font-size: 22px;
-            line-height: 1.35;
+            font-size: 20px; /* Lekko zmniejszone dla lepszej czytelności */
+            line-height: 1.4;
             color: #111;
             background: #fff;
             max-width: 650px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1.5rem; /* Mniejszy padding na urządzenia mobilne */
         }
 
         p {
@@ -32,17 +32,17 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
         }
 
-		h2 {
-			font-size: 32px; /* Zmiana z 1.5rem na 32px */
-			color: #333;
-		}
-
+        h2 {
+            font-size: 28px; /* Zmniejszone, by długie tytuły mieściły się na telefonie */
+            color: #333;
+            line-height: 1.2;
+        }
 
         h4 {
-            font-size: 2.5em;
+            font-size: 1.8rem;
             line-height: 1.2;
         }
 
@@ -64,6 +64,39 @@
             border-bottom-color: #005177;
         }
 
+        /* RESPNSYWDNY NAGŁÓWEK */
+        .site-header {
+            display: flex; 
+            flex-direction: column; /* Domyślnie na telefonach: jedno pod drugim */
+            align-items: center; 
+            text-align: center;
+            gap: 1rem;
+        }
+
+        .site-header img {
+            max-width: 100px; /* Ograniczenie wielkości logo/zdjęcia na telefonie */
+            height: auto;
+        }
+
+        /* REGUŁY DLA WIĘKSZYCH EKRANÓW (KOMPUTER / TABLET) */
+        @media (min-width: 480px) {
+            body {
+                font-size: 22px; /* Powrót do Twoich 22px na komputerze */
+                padding: 2rem;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 32px;
+            }
+            .site-header {
+                flex-direction: row; /* Na komputerze: obok siebie */
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
         .site-footer {
             text-align: center;
             padding-top: 2rem;
@@ -76,18 +109,110 @@
 </head>
 <body>
 
-<header class="site-header" style="display: flex; align-items: center; justify-content: space-between;">
-    <h1 class="site-title" style="margin: 0;">Paweł Klimczewski</h1>
-    <img src="paweł_klimczewski.png" alt="Paweł Klimczewski" style="display: block;">		
-    <!--<p class="site-description">Tego w mediach nie znajdziecie</p>-->
+<!-- Usunięto style inline z nagłówka, przeniesione do sekcji <style> -->
+<header class="site-header">
+    <h1 class="site-title">Paweł Klimczewski</h1>
+    <img src="paweł_klimczewski.png" alt="Paweł Klimczewski">		
 </header>
 <br>
 
+<p>2026-08-10</p>
+
+<h2 id="izoterma">Klima + lekarz = droga recepta.</h2>
+
+<br>
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <img src="krolowa_sniegu.jpg" 
+       alt="krolowa_sniegu" 
+       style="width: 100%; height: auto;">
+  <figcaption style="margin-top: 8px; font-style: italic; color: #555;">
+    
+  </figcaption>
+</div>
+<br>
+
+
+<p>To rzadki widok w mediach, mapa przedstawiająca wysokość izotermy zero. 
+Gdy lecimy samolotem na 10 km wiemy lub nie, że za oknem jest minus 50 C i niewiele sobie z tego robimy, bo w samolocie panuje przyjemny chłodek z klimatyzacji.</p>
+
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <img src="izoterma_zero.png" 
+       alt="izoterma_zero" 
+       style="width: 100%; height: auto;">
+  <figcaption style="margin-top: 8px; font-style: italic; color: #555;">
+    Izoterma zero
+  </figcaption>
+</div>
+<br>
+
+
+<p>O tym jak jest na zewnątrz przekonało się kilku śmiałków, którzy próbowali podróżować poza kabiną samolotu, najczęściej w komorze podwozia. Skrajnie drastyczny przypadek to sytuacja, gdy podczas lądowania nad Londynem, mechanizm podwozia wypchnął zamrożone ciało  "migranta" i ten jako bryła lodu wpadł do ogródka i zdemolował kwiatki-rabatki. Jednym słowem sam wykopał sobie grób między pelargoniami.</p>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <img src="lodowaty_pasazer.jpg" 
+       alt="lodowaty_pasazer" 
+       style="width: 100%; height: auto;">
+  <figcaption style="margin-top: 8px; font-style: italic; color: #555;">
+    Migrant na gapę
+  </figcaption>
+</div>
+<br>
+<p>Atmosfera Ziemi może mieć ok. plus 50 st. C  tuż nad rozgrzanymi skałami Półwyspu Arabskiego i minus 50 C kilka km ponad naszymi głowami. Punkt, a dokładnie wysokość, gdzie jest zero, czyli granica między plusem a minusem to izoterma zero. Dziś mamy tę  warstwę ok. 3800 m nad Polską, gdy w listopadzie lub wcześniej przeżyjemy pierwsze przymrozki, warstwa ta dokładnie dotknie naszych pól i lasów. </p>
+
+<p>Pogoda to zmiany w atmosferze w pionie, ale my lubimy oglądać je na mapkach w poziomie, bo to brzmi lepiej że, "z północy nadciągną masy arktycznego powietrza". Niby to prawda, ale te masy nadciągną z góry, po prostu obniży się izoterma zero, bo energia słoneczna nagrzewająca grunt i wody wokół nas będzie za mała, by ogrzać do temperatur dodatnich powietrze nad tym ogrzewanym obszarem. 
+Na mapce widzimy, że dziś nad Polską zero mamy 3700 m nad głowami, ale już u wybrzeży Szkocji jest to tylko 1100 m a dalej nad północ mapa robi się jasna i tam gdzie jest biało panuje mróz nad samym oceanem. </p>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <img src="temp_pow_morza.png" 
+       alt="temp_pow_morza" 
+       style="width: 100%; height: auto;">
+  <figcaption style="margin-top: 8px; font-style: italic; color: #555;">
+    Temperatura powierzchni morza
+  </figcaption>
+</div>
+<br>
+
+
+<p>Ocean tam nie zamarza bo jest słony i fale nieustannie poruszają wodą, płynie tam też ciepły Prąd Zatokowy, widoczny na mapie temperatury wody, gdzie  widzimy 8 C. Tam właśnie dochodzi do silnego studzenia i parowania oceanu. Wilgoć się unosi,  leci nad Grenlandię, tam na kilku km wysokości panuje zawsze duży mróz. </p>
+
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <img src="grenlandia_snieg.png" 
+       alt="grenlandia_snieg" 
+       style="width: 100%; height: auto;">
+  <figcaption style="margin-top: 8px; font-style: italic; color: #555;">
+    Opady w Arktyce, lato.
+  </figcaption>
+</div>
+<br>
+
+<p>Śnieg  pada tam cały rok: zima, lato, w dzień i nocy i nigdy nie topnieje, dlatego Grenlandia od 11 000 lat absorbuje coraz więcej  lodu kosztem oceanów, których poziom w tej sytuacji musi opadać, bo analogicznie jest na wielkim kontynencie po drugiej stronie globusa, na Antarktydzie. 
+Ten jasny pas między Szkocją i Skandynawią to welon jesieni, jutro u nas wietrznie i 10 C mniej niż dziś, zatem zmieniamy garderobę i koniecznie wyłączamy klimę, którą trzeba rozebrać i umyć, aby nie  wyhodować sobie grzybni, która nas mocno alergizuje i po kolejnym włączeniu klimy za kilka dni wstrzelimy sobie miliony zarodników grzybni do samochodu, czy sypialni.  Najprościej klimy nigdy nie kupować/używać  i dodatkowo oszczędzić na lekarzach i farmaceutach. 
+</p>
+
+<p><em>Paweł Klimczewski</em></p>
+
+<br>
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <img src="swinka.png" 
+       alt="Skarbonka" 
+       style="width: 30%; height: auto;">
+  <figcaption style="margin-top: 8px; font-style: italic; color: #555;">
+    
+  </figcaption>
+</div>
+
+<p>Jeśli uważacie, że możecie mnie wesprzeć nie ma kwot za małych.  Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Paweł Klimczewski, tytułem: wpłata</p>
+<br>
 
 <p>2026-08-10</p>
     <!--<h2>Gorączka krwotoczna nie jest taka zła, gorsza jest gorączka umysłowa.</h2>-->
 
-<h2 id="goraczka">Zaćmienie Słońca to wielki cień na globusie o czym gęsi nie wiedzą.</h2>
+<h2 id="zacmienie">Zaćmienie Słońca to wielki cień na globusie o czym gęsi nie wiedzą.</h2>
 
 <br>
 <div style="display: flex; flex-direction: column; align-items: center;">
@@ -99,7 +224,7 @@
   </figcaption>
 </div>
 <br>
-<p>Dziś w południe dotrze do Pomorza zimny front z deszczem. To już nie będzie ciepły, letni deszcz. Za kilka dni, 14 sierpnia, mamy nów Księżyca, a wcześniej 12. w środę  zaćmienie Słońca. Na Ziemię po jej oświetlonej stronie padnie cień Księżyca. Czyli wielkie zmiany!</p> 
+<p>Dziś w południe (10 sierpnia 2026) dotrze do Pomorza zimny front z deszczem. To już nie będzie ciepły, letni deszcz. Za kilka dni, 14 sierpnia, mamy nów Księżyca, a wcześniej 12. w środę  zaćmienie Słońca. Na Ziemię po jej oświetlonej stronie padnie cień Księżyca. Czyli wielkie zmiany!</p> 
 
 <br>
 <div style="display: flex; flex-direction: column; align-items: center;">
@@ -246,7 +371,8 @@
 <br>
 
 <p>2026-07-26</p> 
-<h2>Strona mojego bloga powstaje z niebytu, a grabie mają stać w szopce.</h2>
+<h2 id="grabie">Strona mojego bloga powstaje z niebytu, a grabie mają stać w szopce.</h2>
+
 
     <main class="content">
         <article class="entry-content">
