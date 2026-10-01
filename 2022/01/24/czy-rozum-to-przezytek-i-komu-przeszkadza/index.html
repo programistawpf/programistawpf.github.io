@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Czy rozum to przeżytek i komu przeszkadza? | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2022-01-24</time>
+    
+    <div class="content">
+      <h1 id="czy-rozum-to-przeżytek-i-komu-przeszkadza">Czy rozum to przeżytek i komu przeszkadza?</h1>
+<p>Tylko człowiek w przyrodzie akumuluje abstrakcyjną wiedzę z pokolenia na pokolenie, wnioskuje, rozwiązuje trudne zadania logiczne, działa rozumnie. Rozumieć problem to znaczy mieć pełną władzę intelektualną nad obserwowanym zjawiskiem i co najważniejsze, panować nad nim dosłownie. Rozum pomaga nam przetrwać w sytuacjach nietypowych, zaskakujących. W krok za rozumem podąża inteligencja. Tak było od zawsze, ale już nie jest i trudno znaleźć moment zmiany.</p>
+<p>W grudniu 2020 były dostępne dokumentacje preparatów mRNA i było tam wyraźnie napisane, że te preparaty nie zatrzymają transmisji a mogą co najwyżej tylko osłabiać skutki zakażeń, np. hipotetyczny stan ciężki choroby u "zaszczepionego" przejść łagodniej. Nic więcej, czytałem.</p>
+<figure><img src="obraz-30.webp" alt=""></figure>
+<p>Tymczasem od początku programu "szczepień" obiecano chętnym super odporność na wszelkie zmartwienia. Gorzej być nie mogło, obserwowałem to w swoim środowisku. "Zaszczepieni", mimo często kiepskiego stanu zdrowia poczuli się jak nieśmiertelni i sterylni mikrobiologicznie i ruszyli w świat,  do biur, do pociągów, do samolotów i gdzie tylko można. Skutki mamy jak na dłoni. W najnowszych danych z 17 stycznia 2022 -59% zakażonych to zaszczepieni. W wieku 35-74 to ponad 70%. <a href="https://pawelklimczewski.pl/2022/01/23/szczypawki-i-smierc-jak-to-jest/">W poprzednim wpisie</a> raportowałem, że 1/4 zgonów "Na covid" to "zaszczepieni". I co teraz?</p>
+<figure><img src="obraz-31.webp" alt=""></figure>
+<p>Gdyby zapytać człowieka rozumnego, co myśli o innych rozumnych ludziach, którzy mieli pełną wiedzę a wprowadzili dezinformację, jaką widzieliśmy, o cel takich działań, musi odpowiedzieć, że albo nie mieli rozumu albo chcieli, aby zarażonych było jak najwięcej. Trzeciego wyjścia nie ma.</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2022/01/29/zycie-jako-smiertelna-choroba-przenoszona-droga-plciowa/">‹‹ &#34;Życie jako śmiertelna choroba przenoszona drogą płciową.&#34;</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2022/01/23/szczypawki-i-smierc-jak-to-jest/">Szczypawki i śmierć. Jak to jest? ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

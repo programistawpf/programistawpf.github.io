@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Niedziela Palmowa 2 | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2023-06-11</time>
+    
+    <div class="content">
+      <h1 id="niedziela-palmowa-2">Niedziela Palmowa 2</h1>
+<p>Dziwny mamy rok pogodowy. W Lewancie zwykle latem są wielkie wyże, tymczasem za górką kilka km od naszej wioski, rodzi się mini niż i wieje od lądu do morza.</p>
+<figure><img src="obraz-11.webp" alt=""><figcaption>Palma po sztormie</figcaption></figure>
+<p>Chmury schodzą na kilkaset metrów, po czym znikają nad otwartym morzem. Za górką jest zatoka z plażą, będzie okazja popływać w południe w cieniu. Jak ktoś chce zmoknąć musi ze słonecznej plaży pojechać z 15 km w góry.</p>
+<figure><img src="obraz-12.webp" alt=""><figcaption>Cyrkulacje and Lewantem 11.06.2023  </figcaption></figure>
+<p>Wilgotność 50% i spada, bo zaczyna się tutaj lato. Po majowych burzach palmy odarte z dużych liści, ostały się tylko te najmłodsze, do września odrosną.</p>
+<figure><img src="bulut.webp" alt=""><figcaption>Niebo</figcaption></figure>
+<p>Co roku po zimowych sztormach zbiera się zeszłoroczne, zeschłe palmowe liście, stąd Niedziela Palmowa była w kwietniu. W tym roku mamy powtórkę w czerwcu.</p>
+<figure><img src="obraz-13.webp" alt=""><figcaption>Widok z drogi D400 na morze.</figcaption></figure>
+<figure><img src="trzecie.webp" alt=""><figcaption>Początek lata za oknem</figcaption></figure>
+<p>Są takie miejsca, gdzie życie toczy się spokojniej niż przy hotelowych promenadach. Jutro jadę do miasteczka, na bazar. Będzie ciekawie, już zapraszam.</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2023/06/17/w-arktyce-jest-forsy-jak-lodu-ale-nie-w-dolarach/">‹‹ W Arktyce jest forsy jak lodu, ale nie w dolarach.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2023/06/06/co-ma-wisiec-nie-utonie/">Co ma wisieć nie utonie ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Czy &#34;ostatnie pokolenie&#34; przekaże swym następcom, co to jest całka i amplituda? | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2025-08-13</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="czy-ostatnie-pokolenie-przekaże-swym-następcom-co-to-jest-całka-i-amplituda">Czy &ldquo;ostatnie pokolenie&rdquo; przekaże swym następcom, co to jest całka i amplituda?</h1>
+<p>W języku polskim pojęcia matematyczne często mają swoje trafne nazwy. Nie wszystkie zostały spolszczone, wiele terminów mamy z łaciny, a w geometrii głównie z greki, np. sinus, czy elleipsis, czyli elipsa. Całka po ludzku to powierzchnia pola pod krzywą, pod linią funkcji. "Całe to, co jest pod funkcją w czasie" to nasza całka, czyli ilość energii słonecznej w ciągu doby jest proporcjonalna do pola pod wykresem temperatury. Gdy zestawimy wykresy z czerwca i sierpnia widzimy wyraźnie, że po południu temperatura szybciej spada i pole pod krzywą jest mniejsze, noce dłuższe a poranki chłodniejsze.</p>
+<figure><img src="obraz-48.webp" alt=""></figure>
+<p></p>
+<p>Wśród studentów jest taki dowcip, że na pytanie, co to jest różniczka, głupi Jasio odpowiada, że jest to "wyniczek z odejmowanka". Klasa rży, a pan profesor mówi głośno, "tak Jasio, to prawie prawda!". Polscy matematycy łacińskie pojęcie differentia Gottfrieda Leibniza, spolszczyli. </p>
+<figure><img src="obraz-49.webp" alt=""></figure>
+<p></p>
+<p>Istotą różniczki jest obliczanie zmiany funkcji, gdy jej argument dąży do zera, w nieskończenie krótkiej chwili. Po co dążyć do zera w języku potocznym opisać się łatwo nie da, ale próbowałem to zrobić rysując styczne do krzywej sinusoidy. Gdy policzymy funkcję pochodną w danym punkcie do krzywej możemy zrozumieć, co by się działo z funkcją, gdyby od tego momentu stała się funkcją liniową, której obrazem jest linia prosta. </p>
+<figure><img src="obraz-50.webp" alt=""></figure>
+<p></p>
+<p>Tak liczymy tor kamienia wystrzelonego z wirującej procy. Stety, niestety nie udało się spolszczyć całej naukowej nomenklatury i mamy łacińską amplitudę, czyli polską "rozległość". Oznacza ona jak bardzo funkcja się zmienia, jaka jest odległość między jej górą a dołem. Im dalej od środka lata dobowa amplituda temperatur będzie rosnąć, co odczuwamy teoretycznie od Anki, gdy bywają zimne wieczory i ranki. Nauka jest intuicyjna i prosta, ludzki rozum jedyny na planecie potrafi zbierać i rozwijać dorobek poprzednich dokonań. Człowiek jest na Ziemi koroną stworzenia i bardzo przykre jest, gdy obserwujemy, że wielu młodych ludzi swój mózg wykorzystuje, aby głosić coś przeciwnego. Ostatnie pokolenie częściowo wyrośnie z wieku buntu i czasem założy rodzinę, ale czy swym dzieciom przekaże coś wartościowego, gdy swoje pierwsze 25 lat straciło na poznawanie czystego kłamstwa i iluzji.</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2025/08/14/dlaczego-w-turcji-mam-znizke-za-bycie-katolikiem-2/">‹‹ Dlaczego w Turcji mam zniżkę za bycie katolikiem.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2025/08/12/urszula-wode-leje-a-deszcz-jej-w-twarz-pada/">Urszula Wodę Leje a deszcz jej w twarz pada. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mozambik (się) atakuje! Strzeżmy swych granic! | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2021-08-27</time>
+    
+    <div class="content">
+      <h1 id="mozambik-się-atakuje-strzeżmy-swych-granic">Mozambik (się) atakuje! Strzeżmy swych granic!</h1>
+<h3>Oraz ważny news:„Talibowie zaproponowali Turcji kierowanie lotniskiem w Kabulu</h3>
+<figure><img src="mozambik_wojsko-1.webp" alt=""></figure>
+<p>W prasie mamy stałe punkty zapalne znane opinii publicznej i tak to leci od dziesiątek lat, a gdy się emocjonujemy kolejnym atakiem Izraela na cywilów w Palestynie niepostrzeżenie drożeje nam woda w kranie i po ciuchu, ale szybko rosną podatki…</p>
+<p>Skoro tak, to po co nam jeszcze Mozambik w tym barszczu ? Afryka to dziś teren ekspansji Chin. USA oczywiście nie patrzy na to bez refleksji i tam, gdzie nie może sam eksploatować afrykańskiej ziemi robi co może, aby nikt inny tego nie robił.</p>
+<figure><img src="mozambik_mapa-1.webp" alt=""></figure>
+<p>Najlepsza do tego jest wojna domowa! W krajach islamskich idealny jest jakiś ruch radykalny, bo nic nie paraliżuje lepiej regionu i inwestorów niż doniesienie o 40 ściętych maczetami nastolatkach. Właśnie mamy takie zajścia w Mozambiku, ruch umownie określany jako lokalny ISIS zajął miasto portowe (Mocímboa da Praia) na północy tego oceanicznego i dużego kraju. Nitki prowadzą do Sudanu, czyli „piraci”. To grupy bojowe wynajmowane przez imperia do robienia zamieszania, gdy brakuje zleceń „zarabiają sami” np.&nbsp; porywając kontenerowiec. Ich ostatnie akcje to nie jest inicjatywa własna. Wnioskuje tak, bo mają sporo nowej dobrej broni a to nie są ludzie rozrzutni. Mozambik jest tak daleko, że „nie wiadomo gdzie”, ale szybko zobaczymy na naszych ulicach ciemne twarze emigrantów z tego regionu jeśli nie będziemy&nbsp; robili tego, co robić trzeba: strzec swych granic!</p>
+<h3>Z ostatniej chwili: „Talibowie zaproponowali Turcji kierowanie lotniskiem w Kabulu”</h3>
+<p><a href="https://www.aa.com.tr/en/asia-pacific/taliban-proposed-turkey-run-kabul-airport-turkish-president/2347871" target="_blank" rel="noreferrer noopener">Talibowie zaproponowali Turcji kierowanie lotniskiem w Kabulu</a></p>
+<p>Czyli „Chińczyki trzymają się mocno!” ;)</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2021/08/31/kto-gwalci-swych-studentow-w-kraju-okupujacym-palestyne/">‹‹ Kto gwałci swych studentów w kraju okupującym Palestynę ?</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2021/08/26/krotko-i-na-temat/">Szczepienie dzieci, krótko i na temat. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

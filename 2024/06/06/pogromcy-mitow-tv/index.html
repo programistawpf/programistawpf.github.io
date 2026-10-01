@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pogromcy mitów TV | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2024-06-06</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="pogromcy-mitów-tv">Pogromcy mitów TV</h1>
+<p>Zbieramy życzliwe słowa za nasz format za co dziękujemy. Na stronie pod linkiem poniżej będzie zawsze aktualny link do najnowszego programu. Absurdalnych innowacji na świecie nie brakuje a nasza "nieszczęśliwa ojczyzna", chce być liderem. Z Jerzym Karwelisem będziemy dla Państwa rozbrajać te miny-pułapki, tak aby nabrać większego dystansu do "newsów" coraz częściej pisanych przez "sztuczną inteligencję", co wg Arystotelesa, twórcy logiki formalnej, znaczy tyle samo co "prawdziwa głupota" Zatem do zobaczenia!</p>
+<p>Stały link: <a href="Link: https://pawelklimczewski.pl/2024/06/06/pogromcy-mitow-tv/">https://pawelklimczewski.pl/2024/06/06/pogromcy-mitow-tv/</a></p>
+<p>Zachęcam na zapisanie linku w zakładkach.</p>
+<p>Zapraszamy dziś na banbye.com 17:30: Pogromcy Mitów - Klimczewski i Karwelis</p>
+<p><strong>Covidzie wróć! Nowa kasa na stole. Tusk podzieli ?</strong></p>
+<p><strong>Wojsko Polskie do aresztu!</strong></p>
+<p><strong>Ludzkość wybiera - Indie lecą w Kosmos, ale są na zakręcie.</strong></p>
+<p><strong>RPA upada! Jak lewica zrujnowała najbogatszy kraj Afryki.</strong></p>
+<p>Program będzie wyświetlany na banbye.com co tydzień z innego linku, dlatego warto zapisać ten mój, stały. Dziś na banbye tu:  https://banbye.com/watch/v_VGDSfmxQ5XmF</p>
+<p>Zapraszamy dziś na banbye.com 17:30: Pogromcy Mitów - Klimczewski i Karwelis</p>
+<p>Covidzie wróć! Nowa kasa na stole. Tusk podzieli ?</p>
+<p>Wojsko Polskie do aresztu!</p>
+<p>Ludzkość wybiera - Indie lecą w Kosmos, ale są na zakręcie.</p>
+<p>RPA upada! Jak lewica zrujnowała najbogatszy kraj Afryki.</p>
+<p><a href="https://banbye.com/watch/v_VGDSfmxQ5XmF">Link do programu</a></p>
+<figure><a href="https://banbye.com/watch/v_VGDSfmxQ5XmF" target="_blank" rel="noreferrer noopener"><img src="obraz-1024x576.webp" alt=""></a></figure>
+<p></p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2024/06/19/latajace-lokomotywy-na-prad-w-glowach-carbo-frustratow/">‹‹ Latające lokomotywy na prąd w głowach carbo-frustratów.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2024/05/25/jak-zatrzymac-tornado-wybuchem-jadrowym/">Jak zatrzymać tornado wybuchem jądrowym. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

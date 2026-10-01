@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>&#34;Nosił wilk razy kilka, aż ponieśli i wilka&#34; | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2024-05-21</time>
+    
+    <div class="content">
+      <h1 id="nosił-wilk-razy-kilka-aż-ponieśli-i-wilka">&ldquo;Nosił wilk razy kilka, aż ponieśli i wilka&rdquo;</h1>
+<p>Na cmentarzu ofiar masakry w Srebrenicy z 1995 roku jest niecałe 7000 nagrobków, a międzynarodowy trybunał uznał to za największe ludobójstwo od czasów II Wojny Światowej. </p>
+<figure><img src="obraz-31.webp" alt=""></figure>
+<p>Radovan Karadżić został skazany na dożywocie, w historii zapisał się jako "Bałkański Rzeźnik". Postępowy świat zachodu, szczególnie prezydent USA, nie widzi nic złego w blisko 40 000 cywilnych ofiarach regularnej armii w Gazie. Do tamtej masakry by nie doszło, gdyby holenderscy, uśmiechnięci żołnierze ONZ nie oddaliby Serbom, bośniackich cywilów. </p>
+<figure><img src="obraz-34.webp" alt=""><figcaption>Żołnierze ONZ w Bośni 1995 oddają cywilów Serbom</figcaption></figure>
+<p>Serbowie spakowali ich do autobusów i zawieźli do lasu. Dożynanie niedobitków po wsiach trwało prawie 3 tygodnie.</p>
+<figure><img src="obraz-32.webp" alt=""><figcaption>Radovan Karadżić przed sądem</figcaption></figure>
+<p></p>
+<p>Sprawiedliwości na tym świecie jest mało, ale jak widać dobre, stare mechanizmy naszej łacińskiej cywilizacji jeszcze działają. Osobiście jestem przeciwny dożywotniego karmienia takich zbrodniarzy, chrześcijaństwo nie apologetyzuje życia ponad wszystko.</p>
+<p><em>Paweł Klimczewski</em></p>
+<p></p>
+<p></p>
+<p></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2024/05/23/3820/">‹‹ Dlaczego jest duszno zanim spadnie ulewa?</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2024/05/17/rosliny-nagrzewaja-ziemie-wyciac-wszystko-co-zielone/">Rośliny nagrzewają Ziemię. Wyciąć wszystko, co zielone! ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

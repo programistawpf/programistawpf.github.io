@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paweł Klimczewski kandyduje do Sejmu. Wielce oryginalna odezwa do narodu Sebastiana Pitonia A.D.2023 | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2023-09-20</time>
+    
+    <div class="content">
+      <h1 id="paweł-klimczewski-kandyduje-do-sejmu-wielce-oryginalna-odezwa-do-narodu-sebastiana-pitonia-ad2023">Paweł Klimczewski kandyduje do Sejmu. Wielce oryginalna odezwa do narodu Sebastiana Pitonia A.D.2023</h1>
+<p>Wrzucam na swój kanał YT oryginalną odezwę do narodu Sebastiana Pitonia, którą mnie bardzo zaskoczył. </p>
+<p>Nagranie niech będzie zapowiedzią kilku rozmów, na jakie umówiłem się z Sebastianem. Zasadniczo zgadzamy się, że powinno być w Polsce miło i przyjemnie, a nie jest. Mimo wielu zbieżnych poglądów mamy różne pomysły na to jak Polskę odbudować. Jak są różne to zademonstrujemy wkrótce na wizji. Tymczasem posłuchajmy Sebastiana jak on widzi odzyskanie Śląska i Sejmu. Zapraszam. </p>
+<div align="center"> <iframe src="https://www.youtube.com/embed/qF1EO4QfzeM?si=OiZQbgTz0SOrNdc7" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" width="800" height="450" frameborder="0"></iframe> </div>
+<p>lub link:</p>
+<p><a rel="noreferrer noopener" href="https://www.youtube.com/watch?v=qF1EO4QfzeM" target="_blank">https://www.youtube.com/watch?v=qF1EO4QfzeM</a></p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2023/09/21/demokracja-w-rekach-slonca-i-ksiezyca/">‹‹ Demokracja w rękach Słońca i Księżyca</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2023/09/19/polska-ordynacja-wyborcza-z-oszustem-z-asem-karo-w-tle-na-koncu-korytarza/">Polska ordynacja wyborcza z  &#34;Oszustem z asem karo&#34; w tle, na końcu korytarza. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

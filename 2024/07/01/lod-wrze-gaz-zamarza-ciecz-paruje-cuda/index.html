@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lód wrze, gaz zamarza, ciecz paruje, cuda ! | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2024-07-01</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="lód-wrze-gaz-zamarza-ciecz-paruje-cuda-">Lód wrze, gaz zamarza, ciecz paruje, cuda !</h1>
+<p>Ciśnienie, temperatura, wilgotność. Te trzy cechy powietrza decydują o "pogodzie". Im wyżej się wspinamy w górach, tym ciśnienie i temperatura spadają a wilgotność względna, czyli zdolność powietrza do utrzymywania wody w stanie gazowym, maleje. Na pewnej wysokości, gdy np. nocą brak jest energii cieplnej do utrzymania wody w stanie gazowym, cząsteczki pary zaczynają się łączyć w kropelki tworząc najpierw białe chmury a potem krople na tyle duże, że te pod wpływem grawitacji spadają w postaci deszczu lub śniegu. </p>
+<figure><img src="obraz.webp" alt=""><figcaption>Śnieżka </figcaption></figure>
+<p>Śnieżka to najwyższy szczyt Karkonoszy oraz Sudetów ze szczytem 1603 m n.p.m. Mamy tam stację obserwacji meteorologicznych, gdzie możemy badać stan atmosfery bez lokalnych fenomenów jak to ma miejsce w dolinach.</p>
+<figure><img src="obraz-1.webp" alt=""></figure>
+<p>Kto wybiera się w góry od dziś musi zabrać ciepłą odzież, bo temperatury w górach są już znacznie poniżej 10 st. C a wiatr nabiera mocny. Woda jest kluczowa dla wszystkich przemian w atmosferze. </p>
+<p></p>
+<p>Fenomen tej substancji nie został ciągle zbadany dogłębnie. Z mniej znanych parametrów jest "punkt potrójny" wody. W temperaturze 0,01 °C (273,16 K) i ciśnieniu 611,73 Pa substancja ta występuje jednocześnie jako gaz, ciecz i ciało stałe. Znamy powszechnie punkty podwójne, gdy woda jest zarazem lodem i cieczą (zamarzanie topnienie) lub cieczą i parą (wrzenie). </p>
+<figure><img src="obraz-4.webp" alt=""><figcaption>Punkt potrójny wody</figcaption></figure>
+<figure><img src="obraz-3.webp" alt=""><figcaption>Punkt potrójny wody</figcaption></figure>
+<p></p>
+<p>W punkcie potrójnym dzieją się wszystkie te przemiany jednocześnie. Lód wrze, gaz zamarza, ciecz paruje, cuda ! W kombinacji ciśnień i temperatur z lewej dolnej części wykresu woda nie występuje w stanie ciekłym, tylko z postaci lodu od razy przechodzi do stanu gazowego, sublimuje ale nie topnieje. Serio!</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2024/07/02/guma-arabska-vs-guma-szwabska-czyli-jak-tlusta-maz-do-smarowania-chleba-wygrywa-wojne/">‹‹ Guma arabska vs. guma szwabska, czyli jak tłusta maź do smarowania chleba wygrywa wojnę.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2024/06/22/janowa-woda-czyli-dokarmiajmy-misie-polarne/">Janowa Woda, czyli dokarmiajmy misie polarne! ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finowie sypią | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2022-10-16</time>
+    
+    <div class="content">
+      <h1 id="finowie-sypią">Finowie sypią</h1>
+<p>Z dużym opóźnieniem i z niewielu krajów dotarły wyniki badań z Europejskiego Sondażu Społecznego. Badanie robione w wielu krajach taką samą ankietą jest doskonałym materiałem do porównań. Niestety transza z 2020 w wielu krajach nie została zrealizowana z powodu "morderczej pandemii". Na szczęście mamy wyniki z 10 państw i jest w nich coś, co nas ucieszy i rozbawi. Badanie jest koordynowane  przez ośrodki akademickie. Opracowałem już dawno raport, z którego wynikało, że Finowie nie odczuli żadnej zmiany w śmiertelności w ostatnich 2 latach, podobnie było w Norwegii, ale już nie w mitycznej Szwecji.</p>
+<figure><img src="obraz-3.webp" alt=""><figcaption>Wykres 1</figcaption></figure>
+<figure><img src="obraz-4.webp" alt=""><figcaption>Tabela 1</figcaption></figure>
+<p>Zajrzyjmy do badania. Na tysiące osób pytanych w każdym kraju mamy bardzo różne wyniki. Osób, które myśli, że chorowało na covid (mimo, że nie wiedzą tego z testu) jest od 2,5% w Finlandii do 10,8% w Czechach, Czesi też "wygrywają" w pozytywnych testach, co piąty Czech miał plusa, Fin, tylko co osiemdziesiąty. Nie wiemy, jakie odsetki ludzi były testowane, więc trzymajmy się odpowiedzi drugiej: <em>" Tak, myślę, że miałem COVID-19, ale nie zostałem przetestowany/nie dałem pozytywnego wyniku"</em>. Czterokrotna przewaga Czechów nad Finami mówi nam o sile propagandy strachu, której w Skandynawii nie prowadzono. I tak to, zapewne niechcący, Finowie powiedzieli nam, jak to było.</p>
+<figure><img src="obraz-5.webp" alt=""><figcaption>Wykres 2</figcaption></figure>
+<p><em>Paweł Klimczewski</em></p>
+<p></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2022/10/19/nie-bylo-takich-badan-i-co-pan-pani-mi-zrobi/">‹‹ Nie było takich badań i co Pan/Pani mi zrobi?</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2022/10/02/lecac-108-000-km-h-bez-hamulcow/">Lecąc 108 000 km/h bez hamulców. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

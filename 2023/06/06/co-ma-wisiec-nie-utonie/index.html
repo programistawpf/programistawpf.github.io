@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Co ma wisieć nie utonie | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2023-06-06</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="co-ma-wisieć-nie-utonie">Co ma wisieć nie utonie</h1>
+<p>Miałem to szczęście, że w szkole robiliśmy dużo doświadczeń. Były to np. doświadczenia z kalorymetrem. Roztapia się x gram lodu w y gram wody i liczy przepływ energii itp. Pamiętam, że przy okazji nauczycielka zwróciła nam uwagę na kwestię poboczną:&nbsp; jak działa prawo Archimedesa. Archimedes pozostawił nam jedno bardzo ważne zdanie: "Ciało zanurzone w wodzie, pozornie traci na wadze tyle, ile wody wyparło."</p>
+<figure><img src="obraz-9.webp" alt=""><figcaption>Góra lodowa w oceanie wystaje o tyle  o ile lód się rozszerzył.</figcaption></figure>
+<p>Z poprzedniego wpisu o wodzie pamiętamy, że woda zamarzając zwiększa swą objętość. Normalnie 1 gram czystej wody zajmuje 1 cm^3 (cm sześcienny, np. kostka o wymiarach 1x1x1 cm ). Gdy zamrozimy taką część wody kostka będzie większa, dla uproszczenia przyjmijmy, że o 10%.</p>
+<figure><img src="obraz-10.webp" alt=""><figcaption>Archimedes z Syrakuz ok. 287–212 p. Ch.</figcaption></figure>
+<p>Teraz do rzeczy: bierzemy szklankę wody, wody w szklance 100 cm^3, czyli 100 gram. Wrzucamy naszą kostkę&nbsp; lodu, 1 gram. Kostka pływa, ale jej 10% wystaje ponad powierzchnię. Gdy coś pływa oznacza to, że pozornie waży 0 gram, bo ciężar kostki został zrównoważony siłą wyporu wody w objętości 90% kostki.&nbsp; Z Archimedesa to oznacza, że 90% objętości kostki wyparło wodę o masie 1 grama. Wszystko się zgadza, bo lodu jest więcej objętościowo niż wody. Na wysokości lustra wody na szklance robimy kreskę cienkim flamastrem. Mija czas, lód się topi, już go nie widać wcale, roztopił się cały. Lustro wody ani drgnie, nie ma prawa! Po wrzuceniu kostki lodu woda się podniosła do poziomu 100+1 gram = 101 gram, czyli 101 cm^3. Z pustego i Salomon nie naleje... Lody Arktyki to głównie lód zamarzniętego oceanu. Gdy zimą powstaje lód, jego część wystaje z wody, bo lód jest lżejszy. Latem, gdy stopnieje niczego w morzu nie przybędzie. Na samym biegunie, tam gdzie lód jest cały rok mamy śnieg, ale jego ilość w stosunku do masy oceanów jest pomijalna. Pytajmy dzieci, czy znają te podstawowe prawa, niech one pytają o to nauczycieli i niech ich uczą, jeśli to potrzebne. Nie grozi nam żaden potop z kierunku Arktyki. Gdy ktoś, coś takiego mówi traktujmy to jak bardzo kiepski dowcip.</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2023/06/11/niedziela-palmowa-2/">‹‹ Niedziela Palmowa 2</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2023/06/04/wakacje-to-duze-wyzwanie/">Wakacje to duże wyzwanie. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

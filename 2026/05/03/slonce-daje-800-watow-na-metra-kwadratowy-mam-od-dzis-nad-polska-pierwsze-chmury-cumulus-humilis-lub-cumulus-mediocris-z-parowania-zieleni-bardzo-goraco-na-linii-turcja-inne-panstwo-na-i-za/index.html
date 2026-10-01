@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wielkie żelazko z parą robi chmury cumulus humilis lub mediocris. | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2026-05-03</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="wielkie-żelazko-z-parą-robi-chmury-cumulus-humilis-lub-mediocris">Wielkie żelazko z parą robi chmury cumulus humilis lub mediocris.</h1>
+<p>Mamy już typowe dla tej pory roku nagrzewanie gleby mocą promieniowania słonecznego&nbsp; na poziomie 800 watów na metr kwadratowy.&nbsp; To jakby na każdy kwadrat podłoża metr na metr przez wiele godzin dziennie postawić solidne żelazko.&nbsp; Dotyczy to głównie terenów zielonych, które jak żelazka z parą bez termostatu oddadzą tryliony litrów wody z liści i zobaczymy na niebie, nad Polską pierwszy raz w tym sezonie obłoki stworzone z wody oddanej z podgrzewanych&nbsp; roślin wokół nas. Zwykle są to&nbsp; cumulus humilis lub cumulus&nbsp; mediocris.</p>
+<figure><img src="obraz-2.webp" alt=""><figcaption>Chmury cumulus humilis</figcaption></figure>
+<p>Jeśli ktoś ma już dość tej pięknej pogody to może obejrzeć moją rozmowę o Bliskim Wschodzie i Turcji. Jest to ważny element układanki,&nbsp; bo to Turcja&nbsp; już raz pokazała, że potrafi zdjąć palec prezydenta USA z atomowego przycisku&nbsp; wymierzonego w Iran.</p>
+<p>ps. Eksplozje atomowe nad Hiroszimą i Nagasaki nie wpłynęły w żadnym stopniu na pogodę w tamtym rejonie. Rzekomy, atomowy czarny deszcz po wybuchu był skutkiem kolosalnego pożaru wielkiego drewnianego miasta zapalonego eksplozją, a nie samą bombą atomową.&nbsp;</p>
+<figure><img src="obraz-3.webp" alt=""><figcaption>Eksplozja jądrowa w powietrzu na niskiej wysokości made in USA wyeksportowana do Japonii </figcaption></figure>
+<p></p>
+<p>Mówię, co wiem i wiem, o czym mówię! Bardzo gorąco na linii Turcja - inne Państwo na I.<br>U Piotra Szlachtowicza w perskiej koszuli komentuje Paweł Klimczewski. Zapraszam serdecznie!</p>
+<p><a href="https://youtu.be/iUSCxnu5GmA" target="_blank" rel="noreferrer noopener">Link do programu:Bardzo gorąco na linii Turcja - inne Państwo na I.</a></p>
+<figure><a href="https://youtu.be/iUSCxnu5GmA " target="_blank" rel="noreferrer noopener"><img src="obraz-4.webp" alt=""></a></figure>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2026/05/07/radio-co-to-jest-i-jak-mozna-je-zrobic-z-zyletki-i-olowka/">‹‹ Radio, co to jest i jak można je zrobić z żyletki i ołówka !</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2026/04/25/prosse-pana-a-na-marsie-to-sa-heterocykle-azotowe/">&#34;Prossę Pana, a na Marsie to są heterocykle azotowe! &#34; ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zanim polecisz na Baleary obejrzyj izobary. | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2024-03-27</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="zanim-polecisz-na-baleary-obejrzyj-izobary">Zanim polecisz na Baleary obejrzyj izobary.</h1>
+<p>Od tygodnia Słońce ogrzewa bardziej półkulę północną niż południową, <a href="https://pawelklimczewski.pl/2024/03/22/na-polnocy-gdzie-nie-spojrzysz-jest-poludnie/" target="_blank" rel="noreferrer noopener">https://pawelklimczewski.pl/2024/03/22/na-polnocy-gdzie-nie-spojrzysz-jest-poludnie/ </a>prądy morskie dodatkowo dostarczają na północ dużo ciepła i mamy marcowe mieszanie powietrza między Arktyką a okolicami Zwrotnika Raka. </p>
+<figure><img src="obraz-36.webp" alt=""></figure>
+<p>Skutkuje to dynamiczną pogodą szczególnie na Atlantyku. Jej skutki czujemy często w postaci załamań pogody, ale zanim te sztormy dotrą do nas atakują najpierw zachodnią Europę, w tym zachodnie Morze Śródziemne i popularną turystycznie Majorkę oraz sąsiednie wyspy archipelagu Balearów, oczywiście południowe wybrzeże Hiszpanii też. </p>
+<figure><img src="obraz-37.webp" alt=""></figure>
+<p>Nowy zwyczaj spędzania świąt gdzieś "na słoneczku" to całkiem dobry sposób na ładowanie naszych fizycznych i duchowych akumulatorów. Korzystam czasem z wiosennych anomalii pogody i np. w lutym spotykam się potajemnie i spiskujemy z kapitanem Nemo, w porcie na tureckim Cyprze, w państwie, o którym w polskim Ministerstwie Spraw Zagranicznych nikt nie słyszał!</p>
+<figure><img src="obraz-38.webp" alt=""><figcaption>Cypr Północny</figcaption></figure>
+<p>Niestety w tym roku Hiszpania i okolice święta przywitają sztormową pogodą, to skutek gęstych izobar, linii ciśnienia, które na mapie łączą punkty o tym samym ciśnieniu. Jeśli te linie są gęste oznacza to duże różnice ciśnień na małej odległości. To podobnie jak w eksplozji, prowadzi do szybkiego przemieszczania się powietrza, czyli wichur i sztormów. Niskiemu ciśnieniu zwykle towarzyszą opady, a przy północnej cyrkulacji chłód. Czyli wieje, chłodzi i zacina tak, że słoneczny kapelusz nie pomoże.</p>
+<figure><img src="obraz-39.webp" alt=""></figure>
+<p>P.s. Rekord ilości śniegu na północnej półkuli pobity i mimo końca marca przybywa. Mañana amigo!</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2024/04/02/polski-msz-nie-rozumie-co-sie-stalo-gdy-izraelska-rakieta-trafila-w-samochod-z-pomoca-humanitarna-w-gazie/">‹‹ Polski MSZ &#34;nie rozumie co się stało&#34;, gdy izraelska rakieta trafiła w samochód z pomocą humanitarną w Gazie.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2024/03/22/na-polnocy-gdzie-nie-spojrzysz-jest-poludnie/">Na północy, gdzie nie spojrzysz jest południe. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wykres prawdy | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2022-09-18</time>
+    
+    <div class="content">
+      <h1 id="wykres-prawdy">Wykres prawdy</h1>
+<p>Jest taki wykres, który oddaje w ułamku sekundy relacje między blokami gospodarczymi na świecie. To wykres wartości walut do złota. Im niżej, tym waluta mniej warta. Wykres ten (5 lat) pokazuje też, że z ostrym spadkiem mamy do czynienia od jesieni 2018. </p>
+<figure><img src="obraz-1.webp" alt=""><figcaption>Waluty do złota, wrzesień 2022, 5 lat</figcaption></figure>
+<p>Pandemia wiosną 2020 to tylko spekulacyjny incydent, pierwsze dno mamy latem 2020, po którym waluty leniwie odzyskiwały przez rok cząstkę straconej wartości. Na scenie mamy pięciu aktorów: niebieski frank szwajcarski, żółty dolar, zielone euro, błękitny (cyjan) waluta chińska i czerwona złotówka. Po lutym gwałtownie odzyskują wartość dolar i szwajcarski frank. Pozorny wolniejszy wzrost wartości euro to de facto spadek do dolara. Europa kupuje w USA drogie gaz, ropę i broń a ceny energii i produkcji gwałtownie rosną. Sojusze atlantyckie to następstwa zwycięstwa USA nad Niemcami i przejecie przez USA kontroli nad byłym Imperium Brytyjskim. Wbrew pozornym gestom przyjaźni miedzy USA i Europą trwa olbrzymie napięcie. Niemcy planując "europejską armię" w ramach UE miały nadzieję wyjść spod kontroli USA. Na wojnie traci najbardziej Europa, blok BRICS na wykresie reprezentuje chiński juan, który ucieka europejskiej walucie równie szybko jak dolar. Azjatyckie towary i żywność będą bardzo drogie, co szybko zmieni nastawienie wyborców w Europie.</p>
+<p>USA właśnie cofnęły zakaz eksportu broni na Cypr co bardzo źle wpłynie na relacje Turcji z zachodem, w okresie dużego napięcia między Atenami i Ankarą to fatalna decyzja dla Europy. Przed nami zmiany, zmiany, zmiany. </p>
+<p><em>Paweł Klimczewski</em></p>
+<p>Źródło: https://stooq.com/q/?s=chfxau&amp;d=20220916&amp;c=5y&amp;t=l&amp;a=ln&amp;b=1&amp;r=usdxau+eurxau+plnxau+cnyxau</p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2022/09/18/jak-oszczedzac-organizm-i-droga-energie-termodynamiczne-podstawy-picia-tureckiej-herbaty/">‹‹ Jak oszczędzać organizm i drogą energię. Termodynamiczne podstawy picia tureckiej herbaty.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2022/09/04/sztuczna-inteligencja-czy-prawdziwa-glupota/">Sztuczna inteligencja, czy prawdziwa głupota? ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

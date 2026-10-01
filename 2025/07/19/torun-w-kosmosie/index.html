@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toruń w Kosmosie | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2025-07-19</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="toruń-w-kosmosie">Toruń w Kosmosie</h1>
+<h2 class="wp-block-heading">Porywają nas kosmici, niech tym się zajmie policja.</h2>
+<p>Nie jest bezpieczne przeszukiwanie raportów GUS-u. W okolicach "plandemi" część obowiązków GUS-u przejmowało Ministerstwo Cyfryzacji i nie do końca było wiadomo, kto nadzoruje rejestry ludności. Za tym kryją się jeszcze Urzędy Stanu Cywilnego, gdzie notowane są zgony, urodziny, śluby, rozwody itp.</p>
+<p>To, co zobaczyłem dziś to jest pełen odjazd, w raporcie GUS "Stan i ruch naturalny ludności do lutego 2025", ściągnięte z serwera 2025/07/19, w styczniu 2020 brakuje 180 000 osób w stosunku do grudnia 2019, czyli około tyle, co ma miasto Toruń.</p>
+<figure><img src="obraz-40.webp" alt=""><figcaption>Wykres 1</figcaption></figure>
+<p></p>
+<p>Zwykle pracowałem na danych tygodniowych i mimo bardzo drobiazgowych analizie nie natrafiłem na ten dziwny "odlot" 180 tysięcy naszych rodaków. Nie będę snuł domysłów co tam się stało, może to nie kosmici?</p>
+<figure><img src="obraz-41.webp" alt=""><figcaption>Wykres 2</figcaption></figure>
+<p></p>
+<p>Na drugim wykresie wyciągnąłem osobno same urodzenia, żeby było wyraźnie widać skąd bierze się błyskawiczne kurczenie naszego narodu. Nie nadmierne zgony a brak urodzeń jest główną przyczyną spadku liczby Polaków. Nadmiarowe zgony były tego przyczyną tylko w okresie od października 2020, kiedy to zamknięto szpitale przez chorymi ludźmi z nowotworami, zawałami, udarami mózgu, itp. Ten wykres oczywiście po raz setny pokazuje, że wiosną 2020 nie było żadnej fali zgonów wirusowych, ale dowody, że potem też takich fal nie było są w raporcie tu : <a href="https://pawelklimczewski.pl/2022/02/09/nie-bylo-fali-pierwszej-nie-bylo-drugiej-nie-bylo-zadnej-fali/" target="_blank" rel="noreferrer noopener">https://pawelklimczewski.pl/2022/02/09/nie-bylo-fali-pierwszej-nie-bylo-drugiej-nie-bylo-zadnej-fali/</a></p>
+<p>P.s. Mając takie dane zagregowane rocznie spece z Gwiazdy Śmierci, pokazują ile to zginęło osób w 2020 w stosunku do 2019. Majstersztyk ojca kłamstwa, a lud drży w trwodze.</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2025/07/19/czy-warszawa-to-male-zydowskie-miasteczko-na-niemiecko-rosyjskim-pograniczu/">‹‹ Czy Warszawa to małe żydowskie miasteczko na niemiecko-rosyjskim pograniczu?</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2025/07/18/my-tu-pilnujemy-granic-a-ue-sie-dopiero-rozkreca/">My tu pilnujemy granic a UE się dopiero rozkręca. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

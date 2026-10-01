@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marzec dąży do średniej | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2025-03-16</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="marzec-dąży-do-średniej">Marzec dąży do średniej</h1>
+<p>Jest taki pół żart, pół prawda wśród statystyków, że główne prawo w Kosmosie brzmi: "Średnia średnich dąży do średniej". I tak oto po bardzo ciepłym początku marca mamy temperatury, które dadzą nam ponownie średnią zbliżoną do obserwacji wieloletnich.</p>
+<figure><img src="obraz-32.webp" alt=""><figcaption>3 dniowa prognoza na noc 2025-03-19</figcaption></figure>
+<p>Marzec to okres bardzo dynamicznego mieszania się powietrza z południa z zimnym arktycznym. Przejawem tego są silne wiatry i sztormy, portugalskie wybrzeża są dziś świadkiem ponad 4 metrowych fal, podobnie wzburzone jest Morze Śródziemne w pobliżu Turcji. </p>
+<figure><img src="obraz-31.webp" alt=""><figcaption>Fale</figcaption></figure>
+<p>Trudno o tej porze roku o rozsądne prognozy na dłużej niż 3-4 dni, ale zamiast prognoz lepiej zdać się na "prawo średnich" i założyć, że w tym marcu po ciepłym początku "ziemia nie spłonie". Na mapce wiarygodna prognoza na 3 dni, rozległy wyż w nocy da przymrozki na południu Grecji i w całej górzystej Turcji. Zimno trafi do Afryki, gdzie szybko się nagrzeje, bo Słońce już tam operuje solidnie i wróci do Europy Zachodniej. Tak to się w marcu kręci.</p>
+<figure><img src="obraz-30.webp" alt=""></figure>
+<p></p>
+<p>Rok temu w okolicach Wielkanocy ostrzegałem amatorów hiszpańskiej wiosny: "Zanim polecisz na Baleary obejrzyj izobary." <a href="https://pawelklimczewski.pl/2024/03/27/zanim-polecisz-na-baleary-obejrzyj-izobary/" target="_blank" rel="noreferrer noopener">https://pawelklimczewski.pl/2024/03/27/zanim-polecisz-na-baleary-obejrzyj-izobary/</a></p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2025/03/22/kwantowe-zloto-w-swiecie-z-mchu-i-paproci/">‹‹ Kwantowe złoto w świecie z mchu i paproci</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2025/03/15/slonce-rzadzi-swiatem-i-bog-ra-wprowadza-podatki-od-deszczu/">Słońce rządzi światem i bóg Ra wprowadza podatki od deszczu ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

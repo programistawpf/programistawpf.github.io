@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O tym, że statystyka nie jest kłamstwem tylko tanią, genialną metodą liczenia wielkich zbiorów. | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2023-05-21</time>
+    
+    <div class="content">
+      <h1 id="o-tym-że-statystyka-nie-jest-kłamstwem-tylko-tanią-genialną-metodą-liczenia-wielkich-zbiorów">O tym, że statystyka nie jest kłamstwem tylko tanią, genialną metodą liczenia wielkich zbiorów.</h1>
+<p>To będzie odpowiedź na pytanie dlaczego losowanie "w ciemno" daje zawsze prawie taki sam wynik?</p>
+<p>Zanim słowo o sondażach warto przypomnieć, że techniki losowania prób reprezentatywnych są bardzo stare. Wyobraźmy sobie, że mamy kupić 10 ton ziarna siewnego i chcemy się przekonać, jaki procent zasianego ziarna da plon. Mamy wykonać próbę kiełkowania, oczywiście niecałego tylko próbki. To jest kluczowy moment. Będziemy badać 1000 ziaren, taka liczba pozwoli na sprawdzenie, czy dobrych ziaren jest około 95 %, czy poniżej 90 %, co byłoby już sygnałem, że mamy słabe ziarno.</p>
+<figure><img src="obraz-10.webp" alt=""></figure>
+<p>Kluczem jest zdanie: Próba jest losowa, jeśli każdy element badanej populacji ma identyczne szanse trafienia próby. W sondażach komputer losuje 1000 numerów PESEL, potem jest kłopot, bo polowa ludzi nie odpowiada albą są na wakacjach, chorują, itp. Z ziarnem jest łatwiej, musimy mieć tylko pewność, że jest dobrze wymieszane. Ne potrzeby tego wpisu zrobiłem zbiór 10 milionów zer i jedynek, gdzie 9,5 mln to nasiona dobre (jedynki) (95%) oraz 1/2 miliona to zera, czyli nasiona złe, (5%). Z tej masy losuję sobie 1 tysiąc, rozkładam je na mokrej ligninie (kwadrat 32 x nasiona 32, gdzie w ostatnim rzędzie brakuje 24 sztuki), po kilku, kilkunastu dniach wiem, ile wykiełkowało.</p>
+<p>Zrobiłem 10 takich losowań z tego samego zbioru i co nam wyszło:</p>
+<p>julia&gt; sum(nasiona[sortperm(rand(10^7))][1:1000])./1000=0.958</p>
+<p>julia&gt; sum(nasiona[sortperm(rand(10^7))][1:1000])./1000=0.95</p>
+<p>julia&gt; sum(nasiona[sortperm(rand(10^7))][1:1000])./1000=0.959</p>
+<p>julia&gt; sum(nasiona[sortperm(rand(10^7))][1:1000])./1000=0.948</p>
+<p>julia&gt; sum(nasiona[sortperm(rand(10^7))][1:1000])./1000=0.951</p>
+<p>julia&gt; sum(nasiona[sortperm(rand(10^7))][1:1000])./1000=0.955</p>
+<p>julia&gt; sum(nasiona[sortperm(rand(10^7))][1:1000])./1000=0.951</p>
+<p>julia&gt; sum(nasiona[sortperm(rand(10^7))][1:1000])./1000=0.947</p>
+<p>julia&gt; sum(nasiona[sortperm(rand(10^7))][1:1000])./1000=0.956</p>
+<p>julia&gt; sum(nasiona[sortperm(rand(10^7))][1:1000])./1000=0.935</p>
+<p>Wyniki tych prób to przedział 93,5% do 95,9. W realu wykonamy jeden pomiar, ale zawsze będziemy przekonani, że jest to znacznie ponad 90%, gdzieś 93 albo 94 albo 95 albo 96%. Gdy zrobimy tych pomiarów nie 10 tylko 100 będziemy się kręcić wokół liczby 95% z pewnym błędem, ale koszt pomiaru jest znikomy do wartości inwestycji i zgadzamy się na to.</p>
+<p>Wynik jednego losowania nie ma żadnego związku z kolejnym, dlatego systemy "na wygraną w lotto" na podstawie kombinacji losowanych wcześniej to czysta ignorancja.</p>
+<p>Ciekawe i ważne: 1000 ziaren daje nam błąd ok. +-2%, nie ma znaczenia czy wylosujemy je z 1 miliona czy z 1 miliarda. Zbadanie z taką samą dokładnością ilu jest mańkutów w Estonii i w Chinach wymaga takiej samej próby np. 1000.</p>
+<p>W tym wpisie oszczędziłem czytelnikom wykładu o przedziałach ufności, wielu analityków nie rozumie tego i żyją szczęśliwie.</p>
+<p>Paweł Klimczewski</p>
+<p></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2023/05/23/sztuczna-inteligencja-informuje-jak-tam-bylo-tak-tam-bylo-zawsze-jakos-bylo-jeszcze-nigdy-tak-nie-bylo-zeby-jakos-nie-bylo/">‹‹ AI informuje: &#34;Jak tam było, tak tam było, zawsze jakoś było. Jeszcze nigdy tak nie było, żeby jakoś nie było.&#34;</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2023/05/16/dlaczego-uzywa-sie-zubozonego-uranu-w-pociskach-przeciwpancernych/">Dlaczego używa się zubożonego uranu w pociskach przeciwpancernych? ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

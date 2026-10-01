@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nadchodzi święto demokracji ! | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2022-11-20</time>
+    
+    <div class="content">
+      <h1 id="nadchodzi-święto-demokracji-">Nadchodzi święto demokracji !</h1>
+<p>Zbliża się rok wyborczy i warto pomyśleć co nam przyniesie. Na skutek ordynacji wyborczej preferowane są partie duże. Dziwna to praktyka ale powszechna w "demokratycznym świecie". Środowiska, które nie mają przynajmniej 1,5 ml wyborców, którzy pójdą głosować nie mają szans na żadne przedstawicielstwo w parlamencie. &nbsp;Próg 5% to jedno a praktyka wyborcza to drugie, system ma drugie dno. Mandaty rozdzielane są w okręgach wyborczych czyli... Weźmy pierwszy z brzegu przykład: okręg nr 1- legnicki.</p>
+<figure><img src="obraz-10.webp" alt=""><figcaption>Tabela 1: <a href="https://sejmsenat2019.pkw.gov.pl/sejmsenat2019/pl/wyniki/sejm/okr/1" target="_blank" rel="noreferrer noopener">https://sejmsenat2019.pkw.gov.pl/sejmsenat2019/pl/wyniki/sejm/okr/1</a></figcaption></figure>
+<p>Okręgów wyborczych w kraju mamy 41 a każdy ma przypisaną liczbę mandatów, od 7 w Częstochowie do 35 w Warszawie, w Legnicy akurat 12.</p>
+<p>Po odsianiu tych, którzy nie przekroczyli 5% w skali kraju zaczyna się sito okręgowe. Stosując metodę D’Hondta robi się "ranking ilorazów", czyli liczby głosów na partie w każdym okręgu dzieli się przez kolejne liczby całkowite i tak np. PiS pięć pierwszych ilorazów to 183 364; 91 682; 61 121 ; 45 841; 36 673, analogicznie inne partie. Teraz sortuje się listy tych ilorazów i mamy tabelkę nr 2. </p>
+<figure><img src="obraz-11.webp" alt=""><figcaption>Tabela 2</figcaption></figure>
+<p>Pozycja 13 nie wchodzi. Stąd zero posłów w Sejmie partii mającej w całym kraju i w tym okręgu ponad 5% głosów. Czym mniejszy okręg tym maszynka działa szybciej. W takiej Częstochowie, gdzie jest 7 mandatów w praktyce próg wynosi ok. 14%.</p>
+<p>System D’Hondta rozwiązuję problem "mandatów ułamkowych" i sam w sobie nie jest stronniczy, gdyby był zastosowany na terenie całego kraju. W małych okręgach działa jak opisałem a Polska składa &nbsp;się z 41 małych okręgów.</p>
+<p></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2022/11/27/teksty-inspirowane-starozytna-anatolia/">‹‹ Teksty inspirowane starożytną Anatolią.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2022/11/12/czy-lord-vader-okaze-sie-chinczykiem/">Czy Lord Vader okaże się Chińczykiem ? ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

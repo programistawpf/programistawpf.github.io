@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Z przyjacielską wizytą w Chinach | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2026-05-13</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="z-przyjacielską-wizytą-w-chinach">Z przyjacielską wizytą w Chinach</h1>
+<p>Towarzysz Xi wita towarzysza Trumpa. Spotkanie przebiega w szampańskiej atmosferze, gdyż po raz pierwszy w historii ludzkości obaj panowie wygrali tę samą wojnę jednocześnie, będąc zarazem jej stronami przeciwnymi.<br><br>USA straciły co najmniej 39 samolotów wojskowych podczas trwającego konfliktu zbrojnego z Iranem. Liczba ta padła podczas oficjalnego przesłuchania w Senacie USA z udziałem dyrektora finansowego Pentagonu, Jaya Hursta.<br><br>Zestrzelenia w locie: Do potwierdzonych strat bojowych nad terytorium Iranu należą m.in.<br>Myśliwiec F-15E Strike Eagle, samolot szturmowy A-10 Thunderbolt, myśliwce pokładowe F/A-18 Super Hornet oraz bezzałogowce MQ-9 Reaper.</p>
+<figure><img src="image-5.webp" alt=""></figure>
+<p><br><br>Zniszczenia na ziemi: Część maszyn została utracona w bazach sojuszniczych na Bliskim Wschodzie. Podczas jednego z masowych ataków rakietowych Iranu na bazę w Arabii Saudyjskiej zniszczonych lub poważnie uszkodzonych zostało 10 strategicznych maszyn, w tym samolot wczesnego ostrzegania Boeing E-3 Sentry (AWACS), maszyny tankowania powietrznego oraz samoloty walki elektronicznej.</p>
+<figure><img src="image-3.webp" alt=""></figure>
+<p><br><br>Koszty finansowe: Łączna wartość utraconego dotychczas przez Pentagon zaawansowanego sprzętu lotniczego w tych operacjach przekroczyła już próg miliarda dolarów.<br></p>
+<figure><img src="image-4.webp" alt=""></figure>
+<p><br>Część zdjęć to prawdopodobnie oszustwa, ale liczby są prawdziwe.</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2026/05/20/trzej-przyjaciele-z-boiska-masowo-odbieraja-rozum/">‹‹ Trzej przyjaciele z boiska masowo odbierają rozum.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2026/05/10/jak-uciekl-nam-pociag-trzeci-swiat-relacji-przeszlosc-przyszlosc/">Jak uciekł nam pociąg &#34;Trzeci świat&#34; relacji przeszłość - przyszłość. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

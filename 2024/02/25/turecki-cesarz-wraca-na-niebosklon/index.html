@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turecki Cesarz wraca na nieboskłon. | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2024-02-25</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="turecki-cesarz-wraca-na-nieboskłon">Turecki Cesarz wraca na nieboskłon.</h1>
+<p>W czasie, gdy w stoczni tureckiej powstaje już drugi lotniskowiec, Turcy oblatali w tym tygodniu swój pierwszy samolot V generacji nazwany Kaan, czyli Cesarz. Ich sen o odzyskaniu Imperium Osmańskiego nikt na świecie nie śmie nazwać "mrzonką".</p>
+<figure><img src="obraz-76.webp" alt=""><figcaption>Imperium Osmańskie w szczycie rozwoju</figcaption></figure>
+<p>Turcja od początku była członkiem międzynarodowego konsorcjum produkującego F-35 najnowsze cacko NATO, ciężki myśliwiecc V generacji pionowego startu. Pod pretekstem "niepotrzebnego zakupu" z Rosji defensywnych rakiet przechwytujących S-300 USA zablokowały przekazanie Turcji ponad 100 maszyn tego typu. </p>
+<figure><img src="obraz-70.webp" alt=""><figcaption>Bayraktar TB2 650 kg masy startowej</figcaption></figure>
+<figure><img src="obraz-71.webp" alt=""><figcaption>Bayraktar TAI Anka 1600 kg masy startowej</figcaption></figure>
+<figure><img src="obraz-73.webp" alt=""><figcaption>Bayraktar Anka 3 6500 kg kg masy startowej</figcaption></figure>
+<figure><img src="obraz-74.webp" alt=""><figcaption>TCG Anadolu Lotniskowiec z pełnym wyposażeniem desantowym. </figcaption></figure>
+<figure><img src="obraz-75.webp" alt=""></figure>
+<p>TCG Anadolu Lotniskowiec z pełnym wyposażeniem desantowym. </p>
+<p></p>
+<p>W rzeczywistości ten ruch uczynił z Izraela jedyny kraj w regionie posiadający te nowoczesne myśliwce. W trakcie negocjacji okazało się, że Turcja jest jedynym na świecie krajem zdolnym do produkcji kadłuba F35 i zapewne mogłaby ostatecznie postawić na  swoim i dostać maszyny, ale Turcy całkowicie zmienili strategię dla swej armii.</p>
+<p>Na miejsce drogich F-35, maszyn krótkiego startu, przeznaczonych dla swych lotniskowców stworzyli całą serię dronów od małych, po maszyny ciężkie oraz równocześnie rozpoczęli prace nad własnym myśliwcem V generacji. Zaledwie po kilku latach oblatali właśnie tę maszynę, co warto obejrzeć na filmie.</p>
+<figure><div class="wp-block-embed__wrapper">
+https://youtu.be/9puiTNO5RPA
+</div></figure>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2024/02/29/elektryki-do-kosza/">‹‹ Elektryki do kosza ?</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2024/02/25/3418/">Teatrzyk Cancer Polonica przedstawia dramacik polski pt. &#34;Bar mleczny zaprasza.&#34; ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

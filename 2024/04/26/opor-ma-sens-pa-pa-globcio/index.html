@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opór ma sens! Pa, pa globcio? | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2024-04-26</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="opór-ma-sens-pa-pa-globcio">Opór ma sens! Pa, pa globcio?</h1>
+<p>Nieprawdą jest, że przyszłość jest zaplanowana i będzie realizowana zgodnie z planem. Gdy latem 1943, po bitwie pod Kurskiem, niemiecka pancerna armia niespodziewanie zaczęła się cofać konsekwencje tego wydarzenia zmieniły losy świata. Na świadomość ludzi miało to tak istotne znaczenie, że w okupowanej Polsce dokładnie 9 miesięcy później skokowo wzrosła liczba urodzeń, a była wtedy wyższa, niż po wprowadzeniu "500+"! </p>
+<figure><img src="obraz-31.webp" alt=""></figure>
+<p>Podobnie w 1984, po pożarze głównego magazynu rakiet strategicznych Związku Radzieckiego, nastąpiła błyskawiczna erozja państwa komunistycznego za naszą wschodnią granicą i już rok później Ronald Reagan dyktował warunki sowietom. Dziś wojna nie toczy się o terytorium, lecz o umysły ludzi uwięzionych w cyberprzestrzeni informacyjnej. Celem ataku jest prawda.</p>
+<figure><img src="obraz-32.webp" alt=""><figcaption>"Dawid i Goliat" N.C. Wyeth 1939</figcaption></figure>
+<p>Nie jest prawdą, że poza naszymi bańkami w mediach społecznościowych na świecie nic się nie dzieje. Zostałem jako gość zaproszony do poważnego grona, które prowadzi pracę naukową opisującą aktualne globalne przemiany. Dziękuje Wam wszystkim, którzy mnie wspieracie od lat i proszę o dalszą obecność i wsparcie w tej nierównej walce.</p>
+<p><em>Paweł Klimczewski</em></p>
+<p></p>
+<p></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2024/04/30/dzis-rzecz-o-roznorodnosci-i-przewidywalnosci-wariancja-kontra-wariactwo-2/">‹‹ Dziś rzecz o różnorodności i przewidywalności. Wariancja kontra wariactwo 2.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2024/04/24/majoweczka-karkoweczka-czyli-na-narty-w-klapkach/">Majóweczka, karkóweczka, czyli na narty w klapkach. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

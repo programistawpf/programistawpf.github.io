@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ciśnienie rządzi światem, choć nie istnieje! | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2023-08-30</time>
+    
+    <div class="content">
+      <h1 id="ciśnienie-rządzi-światem-choć-nie-istnieje">Ciśnienie rządzi światem, choć nie istnieje!</h1>
+<p>Obiektywnie ciśnienie nie istnieje, jest jedynie różnicą pomiędzy sumą wektorów pędu cząsteczek w różnych obszarach dowolnej przestrzeni, a jednak używamy tego pojęcia, które bardzo ułatwia nam życie. Jest wiele takich pojęć. Może warto stworzyć słownik "pożytecznych rzeczy, których nie ma"?</p>
+<figure><img src="obraz-28.webp" alt=""><figcaption>"Babie lato" Józef Chełmoński, 1875</figcaption></figure>
+<p>Pogoda to lokalny stan atmosfery, która otacza Ziemię cieniutkim welonem na wysokość do 100 km. Tylko pierwsze 5 km nadaje się do życia; wyżej mamy już bardzo niskie temperatury i ciśnienia. Ponad 5 km w górę powietrze jest tak rzadkie, że przeciętny człowiek bez treningu nie jest w stanie funkcjonować. Są takie miasta jak La Paz w Boliwii położone ok 4000 m n.p.m. Turyści z dolin czują się tam kiepsko.</p>
+<figure><img src="obraz-29.webp" alt=""><figcaption>La Paz w Boliwii położone ok 4000 m n.p.m.</figcaption></figure>
+<p>Dziś nad Europą aż cztery niże, czyli cyklony wirujące w lewo i oznaczone jako "L" od low pressure.</p>
+<figure><img src="obraz-30.webp" alt=""><figcaption>Ciśnienie nad Europą 30.08.2023 7:00</figcaption></figure>
+<p>Na mapce przepływów powietrza rysuje się już układ wymiany i mieszania powietrza z północy i południa. Dociera do nas mokre, cieple powietrze znad rozgrzanego Morza Śródziemnego i Atlantyku, co daje cieple opady. Co ma rosnąć niech rośnie!</p>
+<figure><img src="obraz-31.webp" alt=""><figcaption>Bilans śniegu w Arktyce 30.08.2023 (dodatni)</figcaption></figure>
+<p>Ostania mapka zrobiona jako rzut znad bieguna północnego pokazuje, że bilans śniegowy w Arktyce jest już dodatni. Niebieskie kwadraciki to obszary z nowymi opadami ostatniej doby, gdzie śnieg się utrzymuje, a czerwone to obszar, gdzie śnieg topniał. Wrzesień na dalekiej północy to już początek zimy. Na szczęście do nas ona ma jeszcze bardzo daleko. Babie lato tuż, tuż.</p>
+<p><em>Paweł Klimczewski</em></p>
+<p></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2023/08/30/z-cyklu-melduje-poslusznie-uwaga-nasz-organizm-atakuja-wirusy-komputerowe/">‹‹ Z cyklu &#34;Melduję posłusznie.&#34;  Uwaga! Nasz organizm atakują wirusy komputerowe.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2023/08/29/katowice-wybory-2023-gramy-razem/">Katowice - Wybory 2023. Gramy razem. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

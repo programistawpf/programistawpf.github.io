@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>W Arktyce jest forsy jak lodu, ale nie w dolarach. | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2023-06-17</time>
+    
+    <div class="content">
+      <h1 id="w-arktyce-jest-forsy-jak-lodu-ale-nie-w-dolarach">W Arktyce jest forsy jak lodu, ale nie w dolarach.</h1>
+<p>Setki wielkich statków handlowych w środku azjatyckiego kontynentu może zaskoczyć. </p>
+<figure><img src="obraz-17.webp" alt=""><figcaption>Ruch statków towarowych w połowie czerwca 2023</figcaption></figure>
+<p></p>
+<p>Arktyczne lato przychodzi nagle i na krótko. Rzeki Syberii są już żeglowne, co widać na ostatniej mapce, to ruch statków handlowych. Zamarznięta jest jeszcze północna droga morska, ale już widać ruch lodołamaczy. </p>
+<figure><img src="obraz-18.webp" alt=""><figcaption>Temperatura i zlodzenie oceanów</figcaption></figure>
+<p>Te potężne ciężkie statki mają tak skonstruowany dziób, że nie rozcinają lodu, zostałyby szybko zniszczone. One nasuwają się na lód, który pęka pod naciskiem wielkiego ciężaru.</p>
+<figure><img src="obraz-14.webp" alt=""><figcaption>Lodołamacz i kontenerowiec.</figcaption></figure>
+<p>Transport wodny jest dziesiątki razy tańszy od lądowego, chyba dlatego w Polsce zlikwidowano główne drogi wodne, np. stawiając w połowie Wisły tamę we Włocławku bez dużej śluzy. Ściana betonu i jesteśmy na mapie świata pustynią  w transporcie wodnym. Kazachstan ma flotę, która pływa do Oceanu Arktycznego rzeką Irtysz. </p>
+<figure><img src="obraz-15.webp" alt=""><figcaption>Azja Centralna</figcaption></figure>
+<p></p>
+<p>Azjatyckie rzeki mają po kilka tysięcy km długości i czasem kilka km szerokości. Zimą po zamarzniętych rzekach jak po autostradzie odbywa się ruch samochodowy. </p>
+<figure><img src="obraz-16.webp" alt=""><figcaption>Rzeka Lena</figcaption></figure>
+<p>Armia Czyngis-chana w XIII wieku po tych zamarzniętych rzekach bardzo szybko przemieszczała się w liczbie dziesiątków tysięcy jeźdźców. Dziś Azja jest najszybciej rozwijającym się kontynentem. Właśnie Chiny, Pakistan i Rosja ogłosiły całkowitą rezygnację z dolara w rozliczeniach wymiany handlowej. Na rynkach finansowych chaos, dolar po 4,10 zł, gdy kilka miesięcy temu dobijał do 5 zł. Chiny palą tani węgiel, jeżdżą na tanim, wskutek zachodniego embarga, irańskim i rosyjskim dieslu. Wysyłają nam drogie panele słoneczne i elektryki, których w Europie nie można produkować, bo to zbyt brudny przemysł. Kiedyś mówiono, że to nie ma sensu, dziś jesteśmy innowacyjni.</p>
+<p><em>Paweł Klimczewski</em></p>
+<p></p>
+<p>Fotografie wikipedia.pl</p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2023/06/21/sezon-ogorkowo-atomowy/">‹‹ Sezon ogórkowo-atomowy</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2023/06/11/niedziela-palmowa-2/">Niedziela Palmowa 2 ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bożek demokracji pożera własne dzieci. | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2023-11-30</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="bożek-demokracji-pożera-własne-dzieci">Bożek demokracji pożera własne dzieci.</h1>
+<p>Cierpliwość to podstawa zdobywania wiedzy. Pisałem po wyborach, że sprawdzę jak na zdrowie i życie rodaków przełoży się ich wysoka frekwencja w wyborach parlamentarnych 15 X 2023. Wojna polsko-polska zebrała swoje ofiary i to nie tylko symboliczne. Trzy tygodnie po masowym wystawaniu w kolejkach, gdy wiało chłodem z północy, mamy o około 100 więcej zgonów niż to wypadało w trendzie i po tym okresie widać nietypowy spadek. </p>
+<p></p>
+<p>Nie jest to wynik bardzo wyrazisty i świadczy o tym, że Polacy w tym dniu ubrali się jak trzeba. Zjawiska masowe mają zawsze swoje konsekwencje w fundamentalnych liczbach dla ludzkiego życia. Gdy 20 milionów ludzi wychodzi z domu na zimny wiatr, zamiast jak zwykle oglądać "kiepskich" przy grzańcu, nie wszyscy wyjdą z tego cało. Życie ludzkie jest kruche i potrafi zakończyć się z błahych przyczyn. Urwane koło od ciężarówki nie odróżnia na chodniku pieszych zaszczepionych od "foliarzy". Od dziecka słyszymy, że "przezorny zawsze jest ubezpieczony", ale należy w takiej sytuacji dodać, że nie oznacza to, że jest bezpieczny.</p>
+<figure><img src="obraz-127.webp" alt=""></figure>
+<p></p>
+<p>Czerwona linia pokazuje zgony w Polsce do 26 listopada 2023 i nie powinna iść powyżej poziomu z lat ubiegłych jak ma to miejsce obecnie. Ponad 200 tys. zgonów "ponadnormatywnych", jak pamiętamy w ponad 80% nie spowodowanych covidem, powinny przez kolejne lata zmniejszyć liczbę zgonów. To, co widzimy na wykresie oznacza, że trauma lockdownu na dłużej spowodowała skrócenie długości życia w Polsce przez najbliższe lata.</p>
+<figure><img src="obraz-128.webp" alt=""><figcaption>Kolejka do lokalu wyborczego 15.X</figcaption></figure>
+<p></p>
+<p>Dwa polskie plemiona złożyły skromną ofiarę na ołtarzu bożka demokracji. Niestety paranoja jaka towarzyszy wyborowi rządu zapewne spowoduje dalsze pogorszenie się stanu zdrowia naszych rodaków, głównie z powodu nadciśnienia i marskości wątroby. "Jak żyć panie premierze", gdy ci co myśleli, że wygrali wybory je przegrali, a ci co myśleli, że wybory przegrali je wygrali. Nawet TV, co to jest wyrocznią warszawską, mówiła przez miesiąc odwrotnie a teraz premier "patriotów" będzie bez bicia się za sejmem wskazywał na swego następcę polakożercę Donalda. "Biada, biada, biada, zawołał głosem donośnym orzeł lecący środkiem nieba..."</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2023/12/01/wiatraki-albo-smierc/">‹‹ Wiatraki... albo śmierć!</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2023/11/29/krol-nie-dozyl-switu/">Król nie dożył świtu. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

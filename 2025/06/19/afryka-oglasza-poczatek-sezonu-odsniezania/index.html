@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Afryka ogłasza początek sezonu odśnieżania. | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2025-06-19</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="afryka-ogłasza-początek-sezonu-odśnieżania">Afryka ogłasza początek sezonu odśnieżania.</h1>
+<p>Zbliżamy się do letniego przesilenia, niestety zimne maj i początek czerwca powodują, że to, co decyduje o pogodzie, czyli temperatura gruntu jest o 2 st. C niższa niż to zwykle bywa o tej porze roku. Chłodne wiatry  z północy i zachmurzenie w dzień powodują, że ziemia wychładza się nocą i nie może w dzień zakumulować tyle ciepła, aby poranki nie były rześkie. </p>
+<figure><img src="obraz-35.webp" alt=""></figure>
+<figure><img src="obraz-36.webp" alt=""></figure>
+<p></p>
+<p>Przed wschodem słońca w wielu miejscach temperatura spada prawie do 10 st. C co nie jest typowe dla lata. Długi weekend z dnia na dzień będzie coraz cieplejszy, ale szybko upalne powietrze zostanie wypchnięte na wschód przez fronty deszczowe. "Janowa woda" to typowe dla naszego klimatu opady, które zasilają wegetację roślin  w szczytowym okresie w roku. Jak pokazuje wykres ostatni, sytuacja nie jest lokalna. Proces topnienia śniegów w całej Arktyce jest bardzo opóźniony i spowalnia im bliżej lata. </p>
+<figure><img src="obraz-38.webp" alt=""></figure>
+<figure><img src="obraz-39.webp" alt=""></figure>
+<p></p>
+<p>Tymczasem na półkuli południowej już na dwa tygodnie przed początkiem tamtejszej zimy w górach południowej Afryki  spadł śnieg i leżał przez kilka dni na terenie znacznie większym niż to czasem bywało w latach ubiegłych, ale dopiero w lipcu. Jak podaje Reuters: wiele dróg jest tam nieprzejezdnych z powodu zasp. To nie są pobielone wysokie szczyty, to głęboki śnieg w dolinach w okolicy Johannesburga. Zdjęcia żyraf na śniegu były dotąd rzadkością, ale wygląda na to, że staną się czymś powszechnym.</p>
+<figure><img src="obraz-37.webp" alt=""></figure>
+<p></p>
+<p>Zatem od bieguna północnego do południowego mamy namacalne symptomy wchodzenia Ziemi w okres chłodniejszy,  co jest oczywiste, gdy przeanalizujemy cykle słoneczne w ostatnich kilku wiekach. Pełna analiza tego zjawiska z prognozą na kilka dekad jest tu: <a href="https://pawelklimczewski.pl/2024/02/03/kosmiczna-prognoza-do-2045-globalne-oziebienie/" target="_blank" rel="noreferrer noopener">https://pawelklimczewski.pl/2024/02/03/kosmiczna-prognoza-do-2045-globalne-oziebienie/</a></p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2025/06/25/przed-nami-magiczne-40-lat/">‹‹ Przed nami magicznych 40 lat ...</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2025/06/15/przyjdzie-lato-za-rok/">Przyjdzie lato! Za rok? ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kocham kino | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2026-05-24</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="kocham-kino">Kocham kino</h1>
+<p>Film "Czarne chmury" z 1973 r. to relikt minionej epoki, gdy ludzie mieli za dużo czasu a filmowcy za mało pieniędzy i rozciągali sceny w nieskończoność, co dawało efekt tasiemca w oleju.</p>
+<figure><img src="obraz-25.webp" alt=""><figcaption>Scena z filmu "Czarne chmury" 1973</figcaption></figure>
+<p>Był to też film dla dorosłych, gdzie "komuna" pozwalała sobie łamać obyczajowe tabu, tym bardziej, że na ekranie balangowała szlachta, a wiadomo, że  szlachta to istniała tylko po to, by "dziewki psuć po dworach."</p>
+<figure><img src="obraz-29.webp" alt=""><figcaption>Scena z filmu "Przygody Błękitnego Rycerzyka" 1963</figcaption></figure>
+<p></p>
+<p>Dla wszystkich, którzy znają "Czarne chmury" z 1973 r.i nie są w stanie bez przewijania obejrzeć tego tasiemca, mam 10 minutowy, ekspresowy produkt zastępczy, jaki stworzyła  4 światowa potęga gospodarcza w latach w latach 1963−1965: "Przygody Błękitnego Rycerzyka". Po stanie wojennym powstała jeszcze wersja kinowa. Łza się w oku kręci, gdy dociera do naszej świadomości smutna prawda, że od dekad w 3. RP, poza orłem z czekolady w pałacu prezydenckim, nie powstał żaden pozytywny film dla dzieci.</p>
+<figure><img src="obraz-28.webp" alt=""></figure>
+<p></p>
+<p>W drugim linku na dole bardzo na serio tekst o tym, dlaczego nie nosimy kotylionów, jako symbolu zbrodni. Zapraszam! </p>
+<p>"Przygody Błękitnego Rycerzyka." </p>
+<figure><div class="wp-block-embed__wrapper">
+https://www.youtube.com/watch?v=OSWa4kL4ypg&amp;t=396s
+</div></figure>
+<p></p>
+<p><a href="https://pawelklimczewski.pl/2024/11/10/11-listopada-skad-tu-haslo-wolnosc-rownosc-braterstwo-albo-smierc/">„Wolność, równość, braterstwo albo śmierć”  ? https://pawelklimczewski.pl/2024/11/10/11-listopada-skad-tu-haslo-wolnosc-rowno</a><a href=" https://pawelklimczewski.pl/2024/11/10/11-listopada-skad-tu-haslo-wolnosc-rownosc-braterstwo-albo-smierc/">sc-braterstwo-albo-smierc/</a></p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2026/05/26/dzis-kwasno-zasadowa-zupa-kuchennej-chemii-fizyki-i-prozy-zycia-w-ogrodzie-lub-akwarium/">‹‹ Dziś kwaśno-zasadowa zupa kuchennej chemii, fizyki i prozy życia w ogrodzie lub akwarium.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2026/05/21/opary-absurdu-wymieszane-z-oparami-helu-to-gaz-rozweselajacy/">Opary absurdu wymieszane z oparami helu to gaz rozweselający. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

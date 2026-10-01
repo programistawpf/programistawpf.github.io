@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kosmiczne bujanie globusem | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2023-02-12</time>
+    
+    <div class="content">
+      <h1 id="kosmiczne-bujanie-globusem">Kosmiczne bujanie globusem</h1>
+<p>W ciągu roku Ziemia przebywa drogę 939 887 974 km, co daje średnią prędkość Ziemi na orbicie równą 107 218 km/h (ok. 29,78 km/s). Tyle Wiki. Czytając ten wpis przenosicie się ok. 10 000 km w Kosmosie to tyle, co z Polski na samo południe Afryki.</p>
+<figure><img src="obraz-9.webp" alt=""><figcaption>Ruch obrotowy Ziemi. wikipedia.org</figcaption></figure>
+<p>Ruch obrotowy w skali roku daje efekt bujania się Ziemi. Gdy wysuniemy w dłoniach globus i na wysokości oczu ustawimy południowy zwrotnik np. niech to będzie Bostwana to Europa będzie ledwo widoczna, taka jest perspektywa Słońca w grudniu. W czerwcu Ziemia jest tak nachylona, że prostopadle świeci w południowym Egipcie, na Zwrotniku Raka. Nachylenie osi ziemskiej to 23,5 st., więc roczne bujanie Ziemi to razem 47 st., sporo. Gdy zimą widzimy Słońce około 14 stopni nad horyzontem i razi nas w oczy,  to latem jest to blisko 62 st. i trzeba mocno unieść głowę, aby je zobaczyć .</p>
+<figure><img src="obraz-10.webp" alt=""><figcaption>Widok Ziemi od strony Słońca w grudniu.</figcaption></figure>
+<figure><img src="obraz-11.webp" alt=""><figcaption>Widok Ziemi od strony Słońca w czerwcu.</figcaption></figure>
+<p>Dziś w polskie południe Słonce świeci pionowo z nieba już a Angoli i opuszcza Zambię, jak widać tam też zbierają chrust. </p>
+<figure><img src="obraz-12.webp" alt=""><figcaption>Gdzieś w Angolii</figcaption></figure>
+<p>Minusem życia blisko równinka są długie noce przez cały rok. Na samym równiku każda noc i każdy dzień są równe i trwają po 12 h, jeśli jesteśmy w górach i jest po deszczu nad ranem może być chłodno. Kto ma dziś słoneczny dzień poczuje już na twarzy ciepełko powstałe w reaktorze jądrowym odległym o 150 mln km. To światło potrzebowało aż 8 minut, aby dotrzeć ze Słońca.</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2023/02/12/cialo-doskonale-czarne-i-kompletna-ciemnota/">‹‹ Ciało doskonale czarne i &#34;kompletna ciemnota&#34;.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2023/02/11/darmowy-chleb-na-wage-zlota/">Darmowy chleb na wagę złota. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Szmer nadchodzącej lawiny po słowackiej stronie wierchów. | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2025-09-27</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="szmer-nadchodzącej-lawiny-po-słowackiej-stronie-wierchów">Szmer nadchodzącej lawiny po słowackiej stronie wierchów.</h1>
+<p>Na Słowacji mamy kolejny krok do normalności. Znowelizowano konstytucję o zapisy przyznające parlamentowi pierwszeństwo przed Unią Europejską w sprawach kulturowych i tożsamości narodowej. Poniżej dokładne badanie robione przez Londyn w celach diagnostycznych w całej Europie, nie jest to szybki sondaż tylko duże badanie socjologiczne w reżimie akademickim. Jak widzicie Słowacja jest bliska, ale jeszcze nie gotowa na referendum w sprawie wyjścia z Unii. Pytania w ankiecie są tak sformułowane, aby ludzie odpowiadali jak najszczerzej, dlatego nie pyta się wprost o wyjście, tylko o ocenę relacji państwa z UE. </p>
+<figure><img src="obraz-30.webp" alt=""></figure>
+<p></p>
+<p>Na tej liście są kraje spoza UE, w których w badaniu  pyta się identycznie (np. Szwajcaria), bo tamtejszych mieszkańców sprawy UE dotyczą poprzez umowy stowarzyszeniowe, Schengen, itp.</p>
+<figure><img src="obraz-31.webp" alt=""><figcaption>Premierzy Węgier i Słowacji, Viktor Orban i Robert Fico</figcaption></figure>
+<p>W kolejce Austria i Węgry, nieco niżej Włosi ostatnio bardzo nerwowi. Polska w połowie stawki z 28% sceptyków w 2024. Dziś jest to około 38%. Prawda jest taka, że wystarczy tylko w mediach więcej treści obnażających destrukcyjne działanie UE na nasze życie i proces potoczy się lawinowo. Referendum na Słowacji dałoby całej Europie ostrego kopa.</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2025/09/30/ciele-bez-wiezi-z-matka-pyta-co-to-jest-intelektualista/">‹‹ Ciele bez więzi z matką pyta, co to jest intelektualista.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2025/09/24/fatalne-wystapienie-trumpa-w-onz-swiat-traci-wiare-w-wyplacalnosc-usa/">Fatalne wystąpienie Trumpa w ONZ, świat traci wiarę w wypłacalność USA. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

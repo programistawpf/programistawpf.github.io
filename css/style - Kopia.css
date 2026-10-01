@@ -1,0 +1,71 @@
+body {
+  font-family: Calibri, sans-serif;
+  font-size: 22px;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ... reszta Twojego CSS ... */
+
+/* Dostosowujesz paginacjê do swojego stylu */
+.pager {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pager li {
+  display: inline;
+}
+
+.pager a {
+  color: #0073aa;
+  text-decoration: none;
+  border-bottom: 1px solid #0073aa;
+}
+
+/* Nawigacja miêdzy wpisami */
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.post-nav-prev {
+  text-align: left;
+}
+
+.post-nav-next {
+  text-align: right;
+}
+
+.post-nav a {
+  color: #0073aa;
+  text-decoration: none;
+  border-bottom: 1px solid #0073aa;
+}
+
+.post-nav a:hover {
+  color: #005177;
+  border-bottom-color: #005177;
+}
+
+
+
+
+/* Nag³ówek i menu – czarne */
+.site-header a,
+.site-nav a {
+    color: #000;
+    border-bottom: none;
+}
+
+.site-header a:hover,
+.site-nav a:hover {
+    color: #000;
+    border-bottom: none;
+}

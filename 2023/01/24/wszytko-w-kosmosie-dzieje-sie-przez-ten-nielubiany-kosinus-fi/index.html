@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wszytko w Kosmosie dzieje się przez ten nielubiany &#34;kosinus fi&#34;. | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2023-01-24</time>
+    
+    <div class="content">
+      <h1 id="wszytko-w-kosmosie-dzieje-się-przez-ten-nielubiany-kosinus-fi">Wszytko w Kosmosie dzieje się przez ten nielubiany &ldquo;kosinus fi&rdquo;.</h1>
+<p>Zima, lato, w tych okresach Ziemia jest w bardzo podobnej odległości od Słońca, skąd zatem takie różnice temperatur. Możemy w praktyce przyjąć, że zimą i latem do Słońca mamy ten sam dystans a cała zagadka jest ukryta w kształcie Ziemi. Wielka kula, tak duża, że z naszej perspektywy wydaje się płaska. I tu jest rozwiązanie, spójrzmy na naszą okolicę jak na płaskie pole. </p>
+<figure><img src="obraz-22.webp" alt=""><figcaption>Rys 1.</figcaption></figure>
+<p>Gdy np. w marcu Słonce pionowo świeci na równik, kąt promieni do powierzchni to 90 stopni, kąt prosty, lepiej być nie może. Gdy sobie wyobrazimy wiązkę promieniowania, w tym cieplnego, wykrojonego w przestrzeni kwadratem o rozmiarach 1x1 m, wiązka taka tworzy na równiku dokładnie kwadrat o tych samych wymiarach i ogrzewa ten kwadrat pola. Taka sama wiązka, gdy dociera do północnej Polski, na 50 równoleżnik pada pod kątem 50 stopni i tworzy prostokąt o wymiarach 1 m na x 1,156 metra. Dlaczego 1,156 m ? Bo to jest równe 1/0,6428, czyli 1/cos(fi) (kosinus fi, fi to ten kąt ). Kosinusy i sinusy policzono już tysiące lat temu i były zebrane w tablicach.&nbsp;</p>
+<figure><img src="obraz-23.webp" alt=""><figcaption>Rys 2.</figcaption></figure>
+<p>Słońce świecące pod kątem taką samą porcją energii musi obdzielić większe pole, tym samy natężenie anergii na jednostkę powierzchni jest mniejsze. Po ludzku, słabiej grzeje.</p>
+<figure><img src="obraz-24.webp" alt=""><figcaption>Wartości funkcji cosinus.</figcaption></figure>
+<p>Skrajną sytuację&nbsp; mamy w tym dniu na biegunie, gdzie kąt padania promieni słonecznych wynosi 0 stopni, kosinus tego kąta to też zero i&nbsp; efekt grzewczy równy zero. Promienie "prześlizgują" się po biegunie.&nbsp; Opisałem sytuację modelową, mnóstwo niuansów, którym nie poruszyłem ma znacznie pomijalne dla odczuć termicznych. W opisanym dniu na biegunie można się opalać stojąc pionowo, twarzą do Słońca, wtedy kosinus mamy maksymalny.</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2023/01/25/kosmiczna-pogoda-grawitacyjna/">‹‹ Kosmiczna pogoda... grawitacyjna.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2023/01/22/z-cyklu-wszytko-da-sie-wyliczyc-jak-szybko-chodzi-wiosna/">Z cyklu &#34;Wszytko da się wyliczyć&#34;. Jak szybko chodzi wiosna ? ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

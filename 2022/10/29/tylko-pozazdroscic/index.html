@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tylko pozazdrościć. | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2022-10-29</time>
+    
+    <div class="content">
+      <h1 id="tylko-pozazdrościć">Tylko pozazdrościć.</h1>
+<p>Wchodzimy w czas, gdy zastanawiamy się częściej, co jest po drugiej stronie, gdzie są nasi bliscy, których groby odwiedzamy i jaki ma sens nasza egzystencja. Trzeba przyznać, że ludzie głęboko wierzący są w najlepszej sytuacji, co nam przypomina dziś św. Paweł piszący do swych przyjaciół Filipian:" Dla mnie bowiem żyć – to Chrystus, a umrzeć – to zysk. Jeśli zaś żyć w ciele – to dla mnie owocna praca, cóż mam wybrać? Nie umiem powiedzieć. Z dwóch stron doznaję nalegania: pragnę odejść, a być z Chrystusem, bo to o wiele lepsze; pozostawać zaś w ciele – to bardziej konieczne ze względu na was." (Flp 1, 18b-26) Tylko pozazdrościć.</p>
+<figure><img src="obraz-10.webp" alt=""><figcaption>Wykres 1</figcaption></figure>
+<p>Przez dwa lata żyjemy w świecie, w którym nie jesteśmy niczego pewni, dlatego warto trzymać się faktów. &nbsp;GUS podaje zgony w podziale na tygodnie, których jest w każdym roku niespełna 53, widzimy je na osi poziomej wykresów. Czerwona linia pokazuje obecny rok. Po przeszło 200 000 zgonów ponadnormatywnych w latach ubiegłych spodziewałem się, że zejdziemy znacznie poniżej średniej zakładając, że nadmiar zgonów 2020/21 dotyczył ludzi, którym i tak "niewiele już zostało" i w kolejnym roku nadejdzie "deficyt zgonów". Niestety tak nie jest, nawet w okresie letnim 2022 liczby zgonów są powyżej typowej średniej wieloletniej. Przypominam, że dla około 90% ponadnormatywnych zgonów w latach ubiegłych główną przyczyną nie był znany wirus.</p>
+<figure><img src="obraz-11.webp" alt=""></figure>
+<p>Pamiętajmy w tych dniach o tych wszystkich, którzy odeszli często w samotności, bez najbliższych przy łóżku.</p>
+<p>Raport o małym wpływie znanego wirusa na wzrost zgonów tu: <a href="https://pawelklimczewski.pl/2022/02/09/nie-bylo-fali-pierwszej-nie-bylo-drugiej-nie-bylo-zadnej-fali/" target="_blank" rel="noreferrer noopener">https://pawelklimczewski.pl/2022/02/09/nie-bylo-fali-pierwszej-nie-bylo-drugiej-nie-bylo-zadnej-fali/</a></p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2022/10/30/strachy-na-lachy-3/">‹‹ Strachy na lachy</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2022/10/19/nie-bylo-takich-badan-i-co-pan-pani-mi-zrobi/">Nie było takich badań i co Pan/Pani mi zrobi? ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

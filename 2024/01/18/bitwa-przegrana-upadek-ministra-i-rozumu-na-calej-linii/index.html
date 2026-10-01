@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitwa przegrana, upadek ministra i rozumu na całej linii. | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2024-01-18</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="bitwa-przegrana-upadek-ministra-i-rozumu-na-całej-linii">Bitwa przegrana, upadek ministra i rozumu na całej linii.</h1>
+<p>Krym i tureckie wybrzeże Morza Czarnego pod śniegiem. Na pierwszym wykresie zasięg pokrywy śnieżnej, a na drugim ilość wody uwięzionej w śniegu na północnej półkuli. Oba wskaźniki ponad granicami odchylenia standardowego, czyli idziemy na rekord. W zeszłym roku było mniej śniegu a wiosna była bardzo opóźniona. </p>
+<p>W kwietniu i maju wiało suchym zimnym powietrzem z północy i nie dotarły do Polski ciepłe deszcze z południa. </p>
+<figure><img src="obraz-26.webp" alt=""><figcaption>Śnieg, 18.01.2024</figcaption></figure>
+<p>To możliwy scenariusz, bo gruby biały śnieg odbija całe promieniowanie słoneczne i wiosna nie ma lokalnych przyczółków, aby nagrzewać grunt i od niego powietrze. Po sporych dostawach w Ameryce teraz prognozy pokazują mnóstwo nowego śniegu w Azji. Bałkany też będą zasypane intensywnie, czyli żarty się skończyły. Turcja już ma problem z powodziami, a jesteśmy dopiero w 1/3 sezonu powstawania śnieżnej pokrywy. </p>
+<figure><img src="obraz-27.webp" alt=""><figcaption>Zasięg pokrywy śnieżnej, północna półkula, 17.01.2024</figcaption></figure>
+<figure><img src="obraz-28.webp" alt=""><figcaption>Ilość wody uwięzionej w śniegu, północna półkula, 17.01.2024</figcaption></figure>
+<p></p>
+<p>Tak to "globalne ocieplenie" zmienia się w globalne oziębienie. Nasza planeta ma wiele mechanizmów samoregulacji, podgrzanie oceanów w okresach, gdy jest mniej chmur z opóźnieniem powoduje wysyłanie ciepłego wilgotnego powietrza w obszary polarne, a tam w postaci gęstych chmur i śniegu łagodzi arktyczny klimat nie pozwalając na ekstremalne wychłodzenie podczas długich zimowych nocy. Tymczasem Minister Klimatu i Ogłupiania Ludu ze swą świtą pobiera gigantyczne wynagrodzenia za wróżenie z fusów. Upadek rozumu na całej linii.</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2024/01/18/na-sloncu-coraz-wiecej-plam-w-styczniu-bylo-juz-blisko-200/">‹‹ Na Słońcu coraz więcej plam, w styczniu było już blisko 200.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2024/01/12/czy-trzecia-wojne-swiatowa-wygra-jemen-konflikt-z-palestyna-rozlewa-sie-na-naszych-oczach/">Czy Trzecią Wojnę Światową wygra Jemen? Konflikt z Palestyną rozlewa się na naszych oczach. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

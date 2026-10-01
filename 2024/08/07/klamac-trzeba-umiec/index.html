@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kłamać trzeba umieć | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2024-08-07</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="kłamać-trzeba-umieć">Kłamać trzeba umieć</h1>
+<p>Jednym z przejawów "pożaru planety" ma być wzrost niszczycielskiej mocy huraganów. Trochę rozczarowany trajektorią huraganu Debby, wraca on z oceanu na kontynent i osłabnie szybko do zwykłego niżu, poszperałem i znalazłem archiwum huraganów z ostatniego półwiecza. W 5 minut wystarczy zrobić dwa wykresy, aby zobaczyć, że planeta stygnie... Mamy już tego wiele symptomów, o czym pisałem w wielu felietonach. Nowe wykresy zgodnie potwierdzają, że mieliśmy przyrost energii termicznej w ziemskim ekosystemie, ale od początku lat 90 tych XX wieku trend ten się zmienił. Paradoksalnie w szczycie tzw. "emisji".</p>
+<figure><img src="obraz-21.webp" alt=""></figure>
+<figure><img src="obraz-22.webp" alt=""></figure>
+<p>Huragany są zaworem bezpieczeństwa bilansu termicznego planety i w obecnym sezonie mamy ich malutko, nawet na wschodnim Pacyfiku, obok Meksyku, po kilku dniach gasną, gdy dochodzą do zimnych prądów docierających tam aż z Antarktydy.</p>
+<p>Karbofrustraci nie przyjmą tych informacji, ponieważ oni są emocjonalnie związany ze swa wiarą, wśród nich trudno znaleźć człowieka racjonalnego, to jest generacja ludzi, którzy stracili kontakt z religią swych rodziców i dziadków i instynktownie szukają obiektu kultu, bo człowiek ma ducha, który nas ciągnie do ducha, w nowej religii to matka ziemia, traktowana osobowo, co jest szaleństwem.</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2024/08/15/cud-znikajacego-sniegu/">‹‹ Cud znikającego śniegu.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2024/08/06/stosy-trupow-ale-tylko-w-prasie/">Stosy trupów, ale tylko w prasie. O tym jak huragan Debby ratuje życie ludzkie. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

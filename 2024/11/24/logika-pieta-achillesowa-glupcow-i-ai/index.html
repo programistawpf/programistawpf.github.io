@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logika piętą Achillesową głupców i AI. | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2024-11-24</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="logika-piętą-achillesową-głupców-i-ai">Logika piętą Achillesową głupców i AI.</h1>
+<p>Wydobycie takiej treści od AI zajęło mi godzinę. Przeszliśmy razem krok po kroku cały proces termodynamiczny i skład fizykochemiczny atmosfery. Metodycznie krok po kroku robiąc razem obliczenia.Na początku dialogu było odwrotnie, "CO2 nas zabije" itp., znacie te frazesy o "oknach" i tajemniczej roli CO2. </p>
+<figure><img src="obraz-39.webp" alt=""></figure>
+<p></p>
+<p>Prawdą jest, że to para wodna ogrzewa planetę, co AI musiała przyznać postępując logicznie. Nie bierzcie sobie też do serca wszystkiego, co AI tu pisze. Chwilę wcześniej, pod ciężarem argumentów z fizyki, przyznała mi rację, że rola pary w zatrzymaniu ciepła (w efekcie cieplarnianym) jest setki razy większa niż CO2. Jednak, gdy ma już coś napisać boi się zejść z wartościami udziałów CO2 znacznie poniżej 1% i wali przedziałem 5-10% dla CO2.</p>
+<p></p>
+<figure><img src="obraz-38.webp" alt=""></figure>
+<p></p>
+<p>90% podzielone przez sto to 0,9% a gdy chodzi o kilkaset  razy wychodzą małe promile rzędu 0,2-0,4%, taki jest udział CO2 w efekcie cieplarnianym.</p>
+<figure><img src="obraz-40.webp" alt=""><figcaption>Thetis zanurza Achillesa w Styksie trzymając go za stopę, Peter Paul Rubens, 1625</figcaption></figure>
+<p>Likwidujesz na maturze matematykę i możesz z narodem robić co chcesz.</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2024/11/26/globalne-ochlodzenie-otworzyli-w-koncu-tego-maila-z-waszyngtonu-ze-to-juz-nie-tak-cwierkamy/">‹‹ Globalne ochłodzenie? Otworzyli w końcu tego maila z Waszyngtonu, że to już nie tak ćwierkamy!</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2024/11/23/poziom-oceanow-opada-inaczej-byc-nie-moze-potop-nam-nie-grozi-ale-lokalne-powodzie-tak/">Poziom oceanów opada, inaczej być nie może. Potop nam nie grozi, ale lokalne powodzie tak. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

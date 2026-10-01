@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logika ludzka i komputery są proste jak budowa cepa | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2023-04-27</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="logika-ludzka-i-komputery-są-proste-jak-budowa-cepa">Logika ludzka i komputery są proste jak budowa cepa</h1>
+<p>Wszyscy wiemy, co to jest komputer, ale muszę przypomnieć, co to jest cep. Cep to dwa kije połączone sznurkiem. To najstarsze narzędzie do oddzielania ziaren z kłosa (młócenie), używany jeszcze w XX wieku.</p>
+<p>Komputer jest technologicznie zaawansowanym narzędziem, ale pod względem zasady działania jest skrajnie prosty. Działa w oparciu o zasady algebry Boole’a, która jest de facto logiką formalną, jaką opisał dokładnie Arystoteles, prawie 2400 lat temu. &nbsp;W wieku XX. technologia elektroniczna dopiero pozwoliła stworzyć "maszyny liczące" a tak naprawdę, jak się za chwile przekonamy, "maszyny wnioskujące". Wiele zastosowań komputerów nazywane jest "inteligentnymi", ale jest to mocna przesada, są to proste rozwiązania automatyki (cepologii ?).</p>
+<p>Najpierw Logika Arystotelesa.</p>
+<p>Ten geniusz stworzył prosty system operatorów (logicznych), którymi da się opisać każdy logiczny proces myślowy i na 100% poznać prawdziwe, poprawne wnioski takiego procesu. Operatorów jest aż 3, a tym jednym to zaprzeczenie, czyli polskie NIE. Dwa pozostałe to LUB i ORAZ (potoczne polskie "i"). To prawie wszystko, bo potrzebujemy jeszcze istoty wnioskowania: pojęć PRAWDY i FAŁSZU. Mamy komplet. Algebra Boole’a, prawdę zapisuje jako "1" a FAŁSZ jako "0". To stąd symbolika Matrixu.</p>
+<figure><img src="obraz-45.webp" alt=""></figure>
+<p>Zapinamy pasy, startujmy:</p>
+<p>FAŁSZ LUB FAŁSZ = FAŁSZ</p>
+<p>FAŁSZ LUB PRAWDA = PRAWDA</p>
+<p>FAŁSZ ORAZ FAŁSZ = FAŁSZ</p>
+<p>FAŁSZ ORAZ PRAWDA = FAŁSZ</p>
+<p>PRAWDA ORAZ PRAWDA = PRAWDA</p>
+<p>NIE FAŁSZ = PRAWDA</p>
+<p>NIE PRAWDA = FAŁSZ</p>
+<p>Sprawdzamy:&nbsp; Robimy sobie założenie pierwsze:</p>
+<p>"Jeśli będzie ciepło ORAZ (i) będę miał wolne w czwartek jadę na ryby."</p>
+<p>Muszą być spełnione oba warunki (abym pojechał) na 4 możliwe kombinacje. Pojadę na ryby tylko w jednej: wolne i ciepło</p>
+<p>Zmieniamy założenie:</p>
+<p>"Jeśli będzie ciepło LUB&nbsp; będę miał wolne w czwartek jadę na ryby."</p>
+<p>Tu na 4 możliwe kombinację pojadę aż w 3 sytuacjach&nbsp; a nie pojadę tylko w jednej: gdy jest zimno i nie mam wolnego.</p>
+<p>Dodając operator NIE w dowolnych miejscach tworzę&nbsp; najdziwniejsze kombinacje znanych z życia, ale nie o tym teraz.</p>
+<figure><img src="obraz-30.webp" alt=""></figure>
+<p>Warunki napisane w zdaniach to są programy komputerowe. Ale gdzie tu jest komputer? Komputer to na samym dnie elektroniczna maszynka, która wstawia warunki (program)&nbsp; i wykonuje automatycznie&nbsp; czynności zależnie od aktualnych okoliczności (przesłanek do podjęcia decyzji). Elektronika posługuje się "tabelami prawdy", aby w łatwy sposób pokazać studentom, o co chodzi a komputerowy mikroprocesor to mnóstwo bramek logicznych, jak na obrazku. Bramki to struktury logiczne fizycznie połączonych ze sobą tranzystorów, tranzystory te zmieniają napięcia, małe lub duże to właśnie zera i jedynki. Wszytko da się opisać dwoma zdaniami:</p>
+<p>BRAMKA ORAZ (i)&gt; każde zero (fałsz) na wejściu daje zero (fałsz) na wyjściu.</p>
+<p>BRAMKA LUB (i)&gt; każde jeden (prawda ) na wejściu daje jeden (prawda) na wyjściu.</p>
+<p>Bramki mogą mieć dowolna liczbę wejść, ale zasady zostają jak wyżej, to są wtedy "wiązki cepów", ale młócimy tak samo.</p>
+<p>Bramka&nbsp; NIE ma jedno wejście i jedno wyjście zero daje jeden a jeden daje zero .</p>
+<p>Mamy już komputer. Budujmy inteligentny dom, zakładamy czujniki temperatury, oświetlenia&nbsp; i wiele innych. Piszemy nasz pierwszy program:</p>
+<p>"Jak będzie jasno LUB będzie ponad 20 st. C otwórz okno."</p>
+<p>Mamy podłączone czujniki, dom myśli. Czujnik A wyśle PRAWDĘ (1), gdy jest ponad 20 st. C. Czujnik B wyśle PRAWDĘ (1), gdy jest jasno. Mamy 23. stopnie w nocy latem, czyli 1 LUB 0 = PRAWDA. Okno otwarte, w nocy to owady przy lampie, ale nasz "inteligentny dom" o owadach nic nie wie i to człowiek musi poprawić program. Obecny program otwiera okno każdego dnia po świcie zimą i latem. Poprawiamy program: "Jak będzie jasno ORAZ będzie ponad 20 st.&nbsp; C otwórz okno." Okno będzie otwierane tylko w ciepłe dni. O to nam chodziło. Elektronika to standard, w którym FAŁSZ to brak napięcia elektrycznego na wejściu/wyjściu a PRAWDA, to ustalone napięcie np. 5 V.</p>
+<p>Dzięki takiemu podejściu obliczenia matematyczne (inne niż logiczne) wykonuje się na liczbach zapisanych w systemie dwójkowym tylko przy użyciu zer i jedynek, ale to już zupełnie inna opowieść. Takie obliczenia są bardzo karkołomne i niedokładne, prawdę mówiąc, komputery do obliczeń są bardzo mało przydatne, ale nic innego na rynku obecnie nie ma.</p>
+<p>Słowniczek logika formalnego : LUB to alternatywa, ORAZ to koniunkcja, NIE to negacja. &nbsp;</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2023/04/30/czy-afryka-bedzie-fabryka-swiata-dla-chin/">‹‹ Czy Afryka będzie fabryką świata dla Chin ?</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2023/04/23/energia-czy-materia-a-co-z-duchem/">Energia czy materia? A co z Duchem? ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

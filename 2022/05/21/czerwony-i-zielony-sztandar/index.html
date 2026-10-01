@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Czerwony i zielony sztandar. | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2022-05-21</time>
+    
+    <div class="content">
+      <h1 id="czerwony-i-zielony-sztandar">Czerwony i zielony sztandar.</h1>
+<p>Mimo niedawnej zmiany władzy w Pakistanie kurs polityczny został tam zachowany. Podczas wodowania korwety w ramach współpracy  turecko-pakistańskiej  strona pakistańska zaprasza Turcję do zbliżenia w ramach korytarza Chiny-Pakistan-Turcja. Pakistan jest bardzo ważnym partnerem Chin z dostępem do Oceanu Indyjskiego z pominięciem cieśnin Indo-pacyfiku. Dodatkowym fajerwerkiem jest przedstawienie tego projektu w kontekście oświadczenia Chin o rozszerzeniu anty-dolarowego bloku BRICS (Brazylia, Rosja, Indie, Chiny i RPA). Turcy już dziś blokują wejście do NATO Finlandii i Szwecji, co będzie dalej? Aby do tej zupy dodać jeszcze czegoś ostrego: Wielka Brytania odblokowała właśnie wszelkie ograniczenia eksportu uzbrojenia do Turcji. Tu może chodzić o silniki do samolotów myśliwskich V generacji, których Turcji nie chcą sprzedać USA. Turcy chcą zrobić sami te myśliwce, brakuje im tylko silników. To właśnie Turcja robi kadłub do F-35 a USA nie znalazły przez ostanie 4 lata na całym świecie innego wykonawcy.</p>
+<figure><img src="obraz.webp" alt=""><figcaption>Zwodowanie korwety wspólnego programu rozwoju marynarki wojennej Turcji i Pakistanu.</figcaption></figure>
+<p>Na deser prezydent Kolumbii w Istambule świętuje przekroczenie obrotów 2 miliardów dolarów w handlu z Turcją. Czy coś na ten temat było w naszej prasie ?</p>
+<figure><img src="obraz-1.webp" alt=""><figcaption>Azja południowa.</figcaption></figure>
+<p>Turecki czerwony sztandar z półksiężycem był używany przez Osmanów od wieków lecz pierwotnie gwiazda była ośmiokątna, jak Wenus oświetlająca krew poległych na Kosowym Polu. W XX wieku republikańska gwiazda okazała się podobna do sowieckiej, a był moment, że Turcja mogła pójść razem ze Związkiem Radzieckim a nie z USA. Zieleń flagi Pakistanu to zieleń islamu. Między Turcją i Pakistanem leży Iran, stacja benzynowa Chin, konkurujący ze swymi sąsiadami. Gdy droga lądowa przez Iran jest zagrożona konfliktem z zachodem tani transport morski pod  opieką tureckiej floty to świetny biznes. <a href="https://www.aa.com.tr/en/asia-pacific/pakistan-proposes-including-turkiye-in-multibillion-dollar-cpec-project/2593766" target="_blank" rel="noreferrer noopener">https://www.aa.com.tr/en/asia-pacific/pakistan-proposes-including-turkiye-in-multibillion-dollar-cpec-project/2593766</a> </p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2022/05/21/strzezcie-sie-zeby-was-nie-zwiedziono-lk-21-8-11/">‹‹ &#34;Strzeżcie się, żeby was nie zwiedziono.&#34; Łk, 21, 8-11</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2022/04/30/wybory-dla-wybranych-o-tym-jak-bardzo-przewidywalne-sa-ludzkie-wybory/">Wybory dla wybranych. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bantustany pod przymusem płacą znajomym królika, a naród widzi płomienie wokół planety. | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2024-11-14</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="bantustany-pod-przymusem-płacą-znajomym-królika-a-naród-widzi-płomienie-wokół-planety">Bantustany pod przymusem płacą znajomym królika, a naród widzi płomienie wokół planety.</h1>
+<p>14 listopada, zwykle w tej porze roku do Europy docierają ostatnie cieple podmuchy z południa. Przed nami "wielkie mieszanie" powietrza między Arktyką i ciepłymi morzami. Orkany czyli cyklony rodzące się nad Europą i w sąsiednim oceanie, są typowe w tym okresie. Silne sztormy na Bałtyku to norma, ale oczywiście czytamy w gadzinowej prasie, że "planeta płonie" mimo że zamarza. Tym razem ciepłe wiatry dotarły do północnej Skandynawii, a nad południem Europy mamy w górach sporo śniegu.</p>
+<figure><img src="obraz-18.webp" alt=""></figure>
+<p></p>
+<p>Ciekawostką jest niż na zachód od Hiszpanii, który zamiast przynieść do Europy wilgoć i ciepło, szuka energii do swego istnienia na środku oceanu i wędruje w lewo, odsuwając się od Europy. </p>
+<figure><img src="obraz-19.webp" alt=""></figure>
+<p></p>
+<p>Ochładza to i tak już chłodny wschodni Atlantyk, co nie wróży nic dobrego tylko suszę zimą. Jak często podkreślam w Kosmosie i na Ziemi nic nie jest przesądzone, ale nie jest dobrze. Mimo zmiany narracji w USA nasz lokalny salonik uparcie bredzi o walce z klimatem, bo to daje pretekst do wydawania bajońskich sum na działania bezsensowne, które obsługują znajomi królika. Obawiam się, że USA wypisze się z paryskiego klubu "walki z klimatem", co da amerykańskiej gospodarce mocny impuls, to my pozostaniemy jako "frajerzy", co to będą płacić za oddychanie i podniosą konkurencyjność gospodarki USA. Główny wojownik klimatyczny jest liderem do fotela prezydenckiego, co jest szaleństwem samym w sobie. Widać naród widzi te płomienie wokół planety.</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2024/11/17/sprytny-premier-juz-pisna/">‹‹ Sprytny premier już pisnął.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2024/11/12/bezlitosna-tabelka/">Bezlitosna tabelka ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>&#34;Nie płacz Argentyno!&#34; Jesteś dorosła, wiesz co robisz! | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2024-01-01</time>
+    
+    <div class="content">
+      <h1 id="nie-płacz-argentyno-jesteś-dorosła-wiesz-co-robisz">&ldquo;Nie płacz Argentyno!&rdquo; Jesteś dorosła, wiesz co robisz!</h1>
+<h2 class="wp-block-heading">Czyli o tym jak wylansowany przez media "radykał"  będzie kompromitował konserwatywne wartości  i wyprzedawał swój kraj za bezcen.</h2>
+<p>Argentyna jest dla USA ważnym klejnotem, który od dekady flirtował z BRICS. 47 mln ludzi, 24 pozycja w światowym rankingu PKB. Jest to kolejny bogaty kraj biednych ludzi, w którym USA tanio kupuje wołowinę i surowce, a gdy lokalne siły próbują się usamodzielnić do akcji wchodzi wojskowa junta i na dekadę wsadza "buntowników" do więzień.</p>
+<figure><img src="obraz-1.webp" alt=""><figcaption>Louise Ciccone jako Evita</figcaption></figure>
+<p>Teraz mamy czasy "demokracji" i Argentyna będzie okradana zgodnie z "austriacką szkołą ekonomiczną" w sposób "liberalny i szokowy", taki "Balcerowicz Turbo". Turbo, bo Javiera Milei, nowy prezydent kraju,  symbol "wolnego rynku", zamierza na początek zlikwidować własną walutę i używać tylko dolara USA. Po co nam brzydkie peso, które ciągle traci w hiperinflacji, dolar to symbol szczęścia, Argentyńczycy już się czują jak Amerykanie w słodkim serialu.</p>
+<figure><img src="obraz-2.webp" alt=""><figcaption>Javiera Milei prezydent Argentyny od 2023 r.</figcaption></figure>
+<p>Potrwa to klika lat, Argentyna zabłyśnie na światowych salonach, zabłyśnie jak płonąca ćma nad ogniskiem. Gospodarka ruszy, pojawią się inwestorzy, niskie koszty pracy i żywności pomogą inwestorom. Naród nabierze otuchy i zacznie zaciągać kredyty w dolarach, ciąg dalszy znamy.</p>
+<figure><img src="obraz-4.webp" alt=""></figure>
+<p></p>
+<p>Przez kilka lat będzie to wizytówka "świata zachodniego, szkoły austriackiej", itp. będąca pokusą dla krajów stojących na rozdrożu między wschodem i zachodem. W tym czasie, bez bufora kursu walutowego Amerykanie będą wywozili za wydrukowane bez żadnego wysiłku dolary,  co zechcą.</p>
+<figure><img src="obraz-3.webp" alt=""><figcaption>Buenos Aires</figcaption></figure>
+<p>Waluta mocarstwa jest dobra dla małych państw, gdzie koszt druku własnej waluty był  poważnym problemem. Dla tak wielkiej gospodarki to samobójstwo na raty, otwarcie bram miasta przed spekulantami. Bez telewizji i internetu nie dałoby się oszukać  tylu ludzi na tak prosty numer.</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2024/01/05/gdzie-jest-pies-pogrzebany/">‹‹ Gdzie jest pies pogrzebany?</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2023/12/27/kul-kontra-makowiec-stawiam-na-makowiec/">KUL kontra makowiec, stawiam na makowiec. ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

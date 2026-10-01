@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dziś złoto jest królem Midasem. | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2025-10-14</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="dziś-złoto-jest-królem-midasem">Dziś złoto jest królem Midasem.</h1>
+<p>Bitcoin notowany w złocie za chwile może spaść poniżej ceny sprzed pół roku, tj. poniżej 26 uncji, potem jest próg sprzed roku w okolicach 22 uncji, a potem to już tylko ciemność na monitorach.&nbsp;</p>
+<p>Kilka razy pisałem o hazardowym charakterze kryptowalut, wtedy atakowali mnie eksperci, polecali "nadrobić wiedzę" i wyjść w "zakamarków ciemnoty epok minionych". " <a href="https://pawelklimczewski.pl/2023/09/09/zloto-z-papieru-sie-nie-swieci/" target="_blank" rel="noreferrer noopener">https://pawelklimczewski.pl/2023/09/09/zloto-z-papieru-sie-nie-swieci/</a></p>
+<figure><img src="obraz-20.webp" alt=""></figure>
+<p></p>
+<p>Podobnie jak dziś złoto, w lokalnych maksimach, entuzjaści postępu kupowali kompletnie wirtualne Bitcoiny za bajońskie sumy. Dziś pocieszają się drugim wykresem ceny Bitcoiny w dolarach, to fikcja, bo waluty tracą z dnia na dzień na rzecz złota, a za nimi drożeją ziemia, domy, mieszkania, to  wszystko, co w życiu chcemy zdobyć i na co latami pracujemy.</p>
+<figure><img src="obraz-21.webp" alt=""></figure>
+<p></p>
+<p>Oczywiście nikt nie wie, co będzie jutro, czy nawet za godzinę, jest jednak prosta logika, która mówi, że im więcej dolarów na świecie, tym mniej one są warte, a Rezerwa Federalna USA drukuje bez wytchnienia na coraz to nowe wojny.</p>
+<p>Polecam omijać wszelkich panikarzy i naganiaczy piszących o kończących się fizycznych zapasach kruszców:</p>
+<p>1. Srebro z powodów podatkowych w Polsce nie jest metalem inwestycyjnym.</p>
+<p>2. Złota król Midas zawsze dorobi ile trzeba.</p>
+<p>Foto: król Midas</p>
+<p>P.s. Król Midas osiągnął swój cel, wszystko czego dotknął zamieniało się w złoto. Niestety, gdy przytulił swą ukochaną córkę ona zamieniła się na zawsze w złoty posag.</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2025/10/17/znajomki-krolika-i-spolka-jak-ko-przeforsowuje-pis-owska-piatke-dla-zwierzat/">‹‹ Znajomki królika i spółka. Jak KO przeforsowuje PiS-owską &#34;piątkę dla zwierząt&#34;.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2025/10/06/zloto-nie-jest-wazne-po-ile-kupujesz-ale-po-ile-sprzedajesz/">Złoto! Nie jest ważne po ile kupujesz, ale po ile sprzedajesz! ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

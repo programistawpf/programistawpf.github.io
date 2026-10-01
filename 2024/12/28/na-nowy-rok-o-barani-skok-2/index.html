@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Na Nowy Rok o barani skok. | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2024-12-28</time>
+    
+    <div class="content">
+      <p><img src="okladka.webp" alt="okladka"></p>
+<h1 id="na-nowy-rok-o-barani-skok">Na Nowy Rok o barani skok.</h1>
+<p>Już tylko 12 tygodni do równonocy, pierwszego dnia wiosny. Ruchem obrotowym rządzą sinus lub/i cosinus, dlatego zmiany w trakcie całego cyklu nie przebiegają w tym samym tempie. Funkcje te rozpędzają się powoli jak parowóz i podobnie długo hamują. Od przesilenia zimowego minął już pierwszy tydzień i czerwona linia "odkleiła" się od zera, co oznacza, że długość dni będzie zauważalnie rosnąć. Słońce każdego dnia wspina się wyżej nad horyzont coraz bardziej ogrzewając północną półkulę. </p>
+<figure><img src="obraz-47.webp" alt=""></figure>
+<p></p>
+<p>Mimo to dzień jest ciągle za krótki, aby zbilansować straty nocnego wychłodzenia stąd do marca panuje w naszym rejonie zima. Jak widzimy na wykresie niebieskim już za tydzień dobowy przyrost długości dnia przekroczy minutę na dobę. Przyrosty każdego dnia się dodają do poprzednich stąd już 21 marca dzień będzie dłuższy o 4,5 h a w czerwcu o 9 h. Takie atrakcje mamy tylko w strefie umiarkowanej. Na równiku przez cały rok każda doba jest identyczna, dzień i noc mają po 12 godzin. Nuda! Jeszcze gorzej jest w okolicach okołobiegunowych, trwa tam wielomiesięczny dzień lub noc polarne.</p>
+<figure><img src="obraz-48.webp" alt=""></figure>
+<p></p>
+<p>Mimo, że Słońce na Nowy Rok tylko o stopień jest wyżej na niebie to 7 metrowe drzewo daje cień krótszy o 1 metr. Właśnie tak nieintuicyjne są funkcje trygonometryczne, dlatego warto sobie to czasem policzyć. Ten metr to barani skok małego barana, ale już na Trzech Króli cień tego drzewa będzie krótszy o 1,7 m a to oznacza istotnie więcej energii słonecznej dla naszej półkuli.</p>
+<figure><img src="obraz-49.webp" alt=""><figcaption>Nasłonecznienie Ziemi 28.12.2024 11:00</figcaption></figure>
+<p></p>
+<p>Mantra: Słońce nie ogrzewa przeźroczystego powietrza, ogrzewa lądy i oceany a te emitując podczerwień podgrzewają powietrze. Kluczowe, ponad 90% znaczenie ma w tym procesie para wodna (H2O), dwutlenek węgla (CO2) ma swój pomijalny, marginalny udział z dwóch powodów:&nbsp;</p>
+<p>a/jest go setki razy mniej niż pary wodnej,</p>
+<p>b/ ma znacznie mniejsze ciepło właściwe od pary i tlenu oraz azotu. Oznacza to, że CO2 przekazując swoje ciepło gazom niecieplarnianym stygnie w swej masie szybciej niż podgrzewa się tlen i azot. Amen.</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2024/12/31/energia-i-informacja-klucze-do-potegi-w-wieku-xxi/">‹‹ Energia i informacja, klucze do potęgi w XXI wieku.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2024/12/27/deszcze-z-kosmosu-i-potop-gotowy/">Deszcze z Kosmosu i potop gotowy! ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

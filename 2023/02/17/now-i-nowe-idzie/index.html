@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nów i nowe idzie. | Paweł Klimczewski</title>
+<link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+
+    
+    <header class="site-header">
+    <nav class="site-nav">
+        
+            <a href="/">Home</a>
+        
+            <a href="/posts/">Blog</a>
+        
+            <a href="/page/about/">O mnie</a>
+        
+            <a href="/tags/">Tagi</a>
+        
+    </nav>
+</header>
+
+    
+    <main>
+        
+  <article class="single-post">
+     
+    <time>2023-02-17</time>
+    
+    <div class="content">
+      <h1 id="nów-i-nowe-idzie">Nów i nowe idzie.</h1>
+<p>Drugi tydzień wyż ściąga zimne powietrze na bliski wschód. Na granicy Syrii i Turcji zimno, powietrze nagrzewa się już trochę nad Saharą, dobiera wilgoci nad Atlantykiem i właśnie wpada do Polski w postaci ciepłego deszczu. W poniedziałek nów Księżyca i sprawy potoczą się po nowemu. </p>
+<figure><img src="obraz-20.webp" alt=""><figcaption>Cyrkulacje 17 lutego 2023 </figcaption></figure>
+<p>Jeśli wyż przesunie się w prawo to Grecy poczują ciepły, afrykański wiatr. Z tym wiatrem wiosną do Grecji i Turcji leci czerwony pył z Afryki, potrafi zasypać ulice, tradycyjnie auta nadają się do sprzątanie a filtry do wymiany. Pamiętam kilka razy czerwonawy śnieg w Polsce, to było właśnie to, darmowe nawożenie pol.</p>
+<figure><img src="obraz-21.webp" alt=""><figcaption>Pył w Turcji przywiany wiosną z Afryki</figcaption></figure>
+<p>Ostatnia mapka pokazuje, gdzie słonce świeci najmocniej, jest już 12 stopni od równika. Zaczyna się globalne mieszanie powietrza. Wszytko, co przez pól roku marzło na północy, teraz trzeba podgrzać. </p>
+<figure><img src="obraz-22.webp" alt=""><figcaption>Nasłonecznienie </figcaption></figure>
+<p>Pamiętajmy, że atmosfera jest dla słonecznego światła przeźroczysta, czyli nie nagrzewa się od Słońca. Słońce najpierw musi nagrzać grunt lub wodę i potem ciepło poprzez kontakt lub w postaci podczerwieni nagrzewa powietrze. Dlatego do maja ciepło w Polsce będzie przynoszone z innych rejonów, często w postaci ciepłego deszczu. Dziś w Warszawie pada deszcz i jest 7 st. a rano było tylko 4.</p>
+<figure><img src="obraz-23.webp" alt=""><figcaption>Chmury nad Afryką w południe. sat24.com</figcaption></figure>
+<p>Wilgotne powietrze, gdy wytrąca krople robi się cieplejsze, bo dostaje energię przejścia fazowego, która była potrzebna gdzieś na Karaibach do stworzenia z cieczy pary wodnej. Dlatego latem w lesie jest chłodno, bo las działa identycznie, jak nasze lodówki. Pobiera ciepło z powietrza, aby wodę w liściach zamienić na parę wodną. Zobaczcie co dzieje się w południe nad Afryką równikową. Dżungla to maszyna do chłodzenie powietrza i wysyłania go w postaci chmur do nas.</p>
+<p>Dlatego, gdy podniesione nad Alpami powietrze się schłodzi i odda wodę w postaci śniegu opadając będzie szybko się nagrzewało przynosząc Węgrom i Chorwatom wiosnę. To jest fen, po polsku halny.</p>
+<p><em>Paweł Klimczewski</em></p>
+
+    </div>
+    
+    
+      
+      <nav class="post-nav">
+        <div class="post-nav-prev">
+          
+            <a href="https://pawelklimczewski.pl/2023/02/19/ziemia-obiecana-to-fantastyczna-miejscowka/">‹‹ Ziemia Obiecana to fantastyczna miejscówka.</a>
+          
+        </div>
+        <div class="post-nav-next">
+          
+            <a href="https://pawelklimczewski.pl/2023/02/15/halo-australia-mowi-sie-czy-u-was-tez-juz-jest-plazma/">Halo? Australia? Mówi się! Czy u Was też już jest plazma? ››</a>
+          
+        </div>
+      </nav>
+    
+  </article>
+
+    </main>
+
+    
+    <footer class="site-footer">
+  <div class="footer-author">
+    <div class="footer-author-text">
+      <h2 class="footer-title">Paweł Klimczewski</h2>
+      
+        <p class="footer-subtitle">Tego w mediach nie znajdziecie</p>
+      
+    </div>
+    <img src="/img/pawel_klimczewski.png" 
+         alt="Paweł Klimczewski" 
+         class="footer-author-img">
+  </div>
+  
+  <p class="footer-text">Jeśli uważasz, że możesz mnie wesprzeć nie ma kwot za małych. Nawet najmniejsze kwoty dają realne wsparcie.</p>
+
+<p>mBank : 87 1140 2017 0000 4002 1094 2334</p>
+<p>Tytułem: "Wpłata"</p>
+
+  
+  <p class="footer-copyright">
+    &copy; 2026 Paweł Klimczewski
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const postsList = document.getElementById('posts-list');
+  let postsData = [];
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      postsData = data;
+      console.log('Załadowano unikalnych wpisów:', postsData.length);
+    });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      postsList.style.display = 'block';
+      return;
+    }
+
+    const results = postsData.filter(post => {
+       
+	  if (!post.permalink) {
+        return false;
+      }
+      const title = (post.title || '').toLowerCase();
+      const content = (post.content || '').toLowerCase();
+      return title.includes(query) || content.includes(query);
+    });
+
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>Brak wyników</p>';
+      postsList.style.display = 'none';
+    } else {
+      let html = '';
+      results.forEach(post => {
+        const title = post.title || 'Bez tytułu';
+        const content = (post.content || '').substring(0, 150) + '...';
+        html += `<div class="search-result">
+                  <h3><a href="${post.permalink}">${title}</a></h3>
+                  <p>${content}</p>
+                </div>`;
+      });
+      searchResults.innerHTML = html;
+      postsList.style.display = 'none'; 
+    }
+  });
+});
+</script>
+
+	
+	
+</body>
+</html>

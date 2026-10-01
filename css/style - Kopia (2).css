@@ -1,0 +1,271 @@
+/* ========================================
+   PODSTAWOWE STYLE
+   ======================================== */
+
+body {
+  font-family: Calibri, sans-serif;
+  font-size: 22px;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.35;
+  color: #111;
+  background: #fff;
+}
+
+p {
+  text-align: justify;
+  margin-bottom: 1.5rem;
+}
+
+/* ========================================
+   NAG£ÓWKI
+   ======================================== */
+
+h1, h2, h4 {
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 32px;
+  color: #333;
+}
+
+h4 {
+  font-size: 2.5em;
+  line-height: 1.2;
+}
+
+/* ========================================
+   LINKI W TREŒCI - NIEBIESKIE (zgodnie ze wzorcem)
+   ======================================== */
+
+a {
+  color: #0073aa;
+  text-decoration: none;
+  border-bottom: 1px solid #0073aa;
+}
+
+a:hover {
+  color: #005177;
+  border-bottom-color: #005177;
+}
+
+/* ========================================
+   LINKI W NAG£ÓWKACH - CZARNE
+   ======================================== */
+
+h1 a, h2 a, h3 a, h4 a,
+.site-header a,
+.site-nav a,
+.site-footer a,
+.pager a {
+  color: #000;
+  border-bottom: none;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover,
+.site-header a:hover,
+.site-nav a:hover,
+.site-footer a:hover,
+.pager a:hover {
+  color: #000;
+  border-bottom: none;
+}
+
+/* ========================================
+   PAGINACJA (przyciski nowsze/starsze)
+   ======================================== */
+
+.pager {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pager li {
+  display: inline;
+}
+
+.pager a {
+  color: #000;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.pager a:hover {
+  color: #000;
+  border-bottom: none;
+}
+
+/* ========================================
+   NAWIGACJA MIÊDZY WPISAMI (poprzedni/nastêpny)
+   ======================================== */
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.post-nav-prev {
+  text-align: left;
+}
+
+.post-nav-next {
+  text-align: right;
+}
+
+/* Linki w nawigacji miêdzy wpisami - NIEBIESKIE (zgodnie ze wzorcem) */
+.post-nav a {
+  color: #0073aa;
+  text-decoration: none;
+  border-bottom: 1px solid #0073aa;
+}
+
+.post-nav a:hover {
+  color: #005177;
+  border-bottom-color: #005177;
+}
+
+/* ========================================
+   STOPKA
+   ======================================== */
+
+.site-footer {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: #767676;
+}
+
+/* Tytu³ tylko na stronie g³ównej */
+.site-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 1rem 0 0.5rem 0;
+    color: #111;
+    text-align: center;
+}
+/* ========================================
+   STA£Y CZARNY PASEK MENU NA GÓRZE
+   ======================================== */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
+    padding: 6px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.site-nav {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.site-nav a {
+    color: #fff !important;
+    border-bottom: none !important;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    padding: 4px 0;
+}
+
+.site-nav a:hover {
+    color: #ccc !important;
+    border-bottom: none !important;
+}
+
+/* Odsuniêcie ca³ej treœci od góry (pod sta³e menu) */
+body {
+    padding-top: 70px;
+}
+
+/* ========================================
+   RESPONSYWNOŒÆ (telefony)
+   ======================================== */
+
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Dopasowanie do ma³ych ekranów */
+@media (max-width: 700px) {
+    body {
+        padding: 1rem;
+        padding-top: 70px;
+    }
+
+    .site-nav {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .site-nav a {
+        font-size: 0.85rem;
+        padding: 4px 6px;
+        white-space: nowrap;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    /* NOWE: Tytu³ na stronie g³ównej */
+    /* .site-title {
+		font-size: 1.8rem;
+		max-width: 100%;
+		overflow: hidden;
+		word-wrap: break-word;
+	}*/
+	
+	.site-title {
+		font-size: 1.4rem;
+		max-width: 100%;
+		word-wrap: break-word;
+		padding: 0 1rem;
+	}
+
+    .post-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .post-nav-prev,
+    .post-nav-next {
+        text-align: center;
+    }
+}
