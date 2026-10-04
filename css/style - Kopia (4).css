@@ -505,28 +505,3 @@ figcaption {
   text-decoration: none;
   color: inherit;
 }
-
-
-/* ========================================
-   TEKST LINKU Z PREVIEW CZARNY 
-   ======================================== */
-
-.search-thumbnail {
-  max-width: 100%;
-  height: auto;
-  margin: 10px 0;
-  display: block;
-}
-.search-result {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-.search-result,
-.search-result h3,
-.search-result p,
-.search-result a {
-  color: #111 !important;
-  border-bottom: none !important;
-  text-decoration: none !important;
-}
