@@ -512,7 +512,7 @@ figcaption {
    ======================================== */
 
 .search-thumbnail {
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
   margin: 10px 0;
   display: block;
