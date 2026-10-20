@@ -1,25 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Pages on Paweł Klimczewski</title>
-    <link>https://pawelklimczewski.pl/page/</link>
-    <description>Recent content in Pages on Paweł Klimczewski</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>pl</language>
-    <managingEditor>youremail@domain.com (Paweł Klimczewski)</managingEditor>
-    <webMaster>youremail@domain.com (Paweł Klimczewski)</webMaster>
-    <lastBuildDate>Sun, 27 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://pawelklimczewski.pl/page/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>O mnie</title>
-      <link>https://pawelklimczewski.pl/page/about/</link>
-      <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Paweł Klimczewski)</author>
-      <guid>https://pawelklimczewski.pl/page/about/</guid>
-      <description>Paweł Klimczewski
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on Paweł Klimczewski</title><link>https://pawelklimczewski.pl/page/</link><description>Recent content in Pages on Paweł Klimczewski</description><generator>Hugo -- gohugo.io</generator><language>pl</language><managingEditor>youremail@domain.com (Paweł Klimczewski)</managingEditor><webMaster>youremail@domain.com (Paweł Klimczewski)</webMaster><lastBuildDate>Sun, 27 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://pawelklimczewski.pl/page/index.xml" rel="self" type="application/rss+xml"/><item><title>O mnie</title><link>https://pawelklimczewski.pl/page/about/</link><pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate><author>youremail@domain.com (Paweł Klimczewski)</author><guid>https://pawelklimczewski.pl/page/about/</guid><description>Paweł Klimczewski
 Kim jestem
 Socjolog, ekspert analizy rynku, danych demograficznych, oprogramowania statystycznego. Cybernetyka, statystyka, matematyka, fizyka, informatyka, elektronika, modele genetyczne. Jedyny polski współautor pierwszego tomu książki &amp;ldquo;Fałszywa pandemia. Krytyka naukowców i lekarzy.&amp;rdquo; i inne książki w tej serii.
-Posiadam głęboki warsztat statystyczny i programistyczny. Piszę oprogramowanie i modele matematyczne wielkiej skali.</description>
-    </item>
-    
-  </channel>
-</rss>
+Posiadam głęboki warsztat statystyczny i programistyczny. Piszę oprogramowanie i modele matematyczne wielkiej skali.</description></item></channel></rss>
